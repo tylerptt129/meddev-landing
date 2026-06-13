@@ -190,6 +190,39 @@ section{padding:104px 0}
 .cta-actions{display:flex;flex-direction:column;gap:13px;align-items:stretch}
 .cta-actions .hint{font-family:var(--mono);font-size:10px;color:#7E92A6;text-align:center;letter-spacing:.05em}
 
+
+/* founding partner */
+.fp{background:var(--surface);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.fp-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:start}
+.fp-card{background:var(--surface);border:1px solid var(--hair);border-radius:22px;padding:40px;box-shadow:0 30px 70px -42px rgba(20,30,42,.2)}
+.fp-card.alt{background:linear-gradient(180deg,#FBFCFE,var(--surface-2));border-color:var(--hair)}
+.fp-seats{display:flex;align-items:baseline;gap:10px;margin:4px 0 18px}
+.fp-seats b{font-family:var(--display);font-weight:800;font-size:40px;letter-spacing:-.02em;color:var(--ink);line-height:1}
+.fp-seats span{font-size:13.5px;color:var(--granite)}
+.fp-list{list-style:none;margin:18px 0 0;display:flex;flex-direction:column;gap:13px}
+.fp-list li{display:flex;gap:12px;font-size:14.5px;color:var(--ink);line-height:1.45}
+.fp-list li svg{flex:none;width:19px;height:19px;margin-top:1px}
+.fp-list li b{font-weight:600}
+.fp-terms{margin-top:22px;padding-top:20px;border-top:1px solid var(--hair);display:flex;flex-direction:column;gap:10px}
+.fp-term{display:flex;gap:11px;font-size:13px;color:var(--granite);line-height:1.5}
+.fp-term .tk{font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--glow-hi);background:var(--glow-soft);border-radius:5px;padding:3px 8px;height:fit-content;white-space:nowrap;font-weight:700}
+.badge-soon{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.08em;background:var(--dusk-soft);color:var(--dusk-ink);border-radius:5px;padding:3px 9px;text-transform:uppercase}
+.fp-note{font-family:var(--mono);font-size:10.5px;color:var(--mist);letter-spacing:.04em;margin-top:18px}
+/* resources */
+.res-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.res-card{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.res-card:hover{border-color:var(--glow);transform:translateY(-2px);box-shadow:0 16px 34px -20px rgba(20,30,42,.25)}
+.res-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.res-card h3{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em}
+.res-card p{font-size:13.5px;color:var(--granite);line-height:1.5}
+.res-meta{font-family:var(--mono);font-size:10.5px;color:var(--mist);letter-spacing:.04em;margin-top:2px}
+/* updates strip */
+.upd{background:var(--surface-2);border:1px solid var(--hair);border-radius:20px;padding:40px 44px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.upd h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;margin-bottom:10px}
+.upd p{color:var(--granite);font-size:15px;max-width:560px}
+.upd .pill{font-family:var(--mono);font-size:10.5px;color:var(--pine);background:var(--pine-soft);border-radius:999px;padding:5px 12px;letter-spacing:.04em;font-weight:700;display:inline-block;margin-bottom:14px}
+@media(max-width:820px){.fp-grid{grid-template-columns:1fr}.res-grid{grid-template-columns:1fr}.upd{grid-template-columns:1fr;padding:34px 28px}.fp-card{padding:32px}}
+
 /* footer */
 footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 .foot-in{display:flex;align-items:flex-end;gap:26px;flex-wrap:wrap;justify-content:space-between}
@@ -259,6 +292,8 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
       <a href="#flow">Connected</a>
       <a href="#modules">Modules</a>
       <a href="#founder">Founder</a>
+      <a href="#founding">Founding Partner</a>
+      <a href="#resources">Resources</a>
       <a class="btn btn-glow btn-sm" href="#access">Join the waitlist</a>
     </div>
   </div>
@@ -274,7 +309,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
       <p class="lede">The quality management system built for medical device manufacturers — end-to-end automation of the work between the work. Every action is an authenticated electronic signature. Every record lives on an append-only audit trail. Every module is connected by design — so audit-ready isn't a scramble, it's the resting state.</p>
       <div class="hero-ctas">
         <a class="btn btn-glow" href="#access">Join the waitlist</a>
-        <a class="btn btn-ghost-d" href="#flow">See how it connects</a>
+        <a class="btn btn-ghost-d" href="#founding">Become a Founding Partner</a>
       </div>
       <div class="chips-label">Built for</div>
       <div class="chips" role="list">
@@ -483,6 +518,63 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
           <span class="cred">RAPS CERTIFICATE</span>
           <span class="cred">10+ YEARS · MEDICAL DEVICE · CROSS-FUNCTIONAL</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOUNDING PARTNER ================= -->
+<section id="founding" class="fp">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="evt">EVT-0007 · Founding Partner Program</span>
+      <h2>Five seats. Built around you.</h2>
+      <p>Before the doors open to everyone, a small group of medical device manufacturers will shape what ships — and lock in founding terms that never come back. This isn't early access to unfinished software. It's a seat at the table while the table is still being set.</p>
+    </div>
+    <div class="fp-grid">
+      <div class="fp-card rv">
+        <div class="fp-seats"><b>5</b><span>founding seats &middot; by application</span></div>
+        <ul class="fp-list">
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Founding pricing, locked for life.</b> A fixed fraction of future list price — for as long as you stay.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>A direct line to the roadmap.</b> Your modules, your workflows, prioritized — you help decide what gets built next.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Named recognition.</b> Listed as a Founding Partner of the platform, if you want to be.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Built by an auditor, with you.</b> Direct founder access through onboarding and beyond — not a support queue.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>A compliance head start.</b> Your QMS, audit-ready, before your competitors have finished evaluating vendors.</span></li>
+        </ul>
+      </div>
+      <div class="fp-card alt rv">
+        <div class="res-top"><div class="evt">How it works</div><span class="badge-soon">Applications open late 2026</span></div>
+        <div class="fp-terms">
+          <div class="fp-term"><span class="tk">STEP 1</span><span>Apply for a seat — tell us your company, your device class, and the modules that matter most to you.</span></div>
+          <div class="fp-term"><span class="tk">STEP 2</span><span>If it's a fit, you're invited to reserve your seat with a <b>fully refundable</b> deposit — refundable any time before your beta access.</span></div>
+          <div class="fp-term"><span class="tk">STEP 3</span><span>Your deposit returns to you as <b>double its value</b> in credit toward your first year. You reserve position — and come out ahead.</span></div>
+        </div>
+        <p class="fp-note">Seats open alongside the first working demo, late 2026. Join the waitlist now to be first in line when applications open — waitlist members are invited before anyone else.</p>
+        <div style="margin-top:20px"><a class="btn btn-glow" href="#access">Get on the list first</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESOURCES ================= -->
+<section id="resources">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="evt">EVT-0008 · Resources from the founder</span>
+      <h2>Practical tools, while the platform builds.</h2>
+      <p>Field-tested quality resources written by a Certified Lead Auditor — the same thinking going into the platform, available to your team now. More arriving as we go.</p>
+    </div>
+    <div class="res-grid rv">
+      <div class="res-card">
+        <div class="res-top"><h3>QMSR Transition Gap-Assessment Toolkit</h3><span class="badge-soon">Coming soon</span></div>
+        <p>A practical, section-by-section self-assessment for the move from the QSR to FDA's Quality Management System Regulation — the gaps ISO-certified teams miss, the evidence to pull, and a remediation plan that doubles as your transition record.</p>
+        <div class="res-meta">48 assessment points &middot; 10 sections &middot; remediation + evidence templates</div>
+      </div>
+      <div class="res-card">
+        <div class="res-top"><h3>The Founder Briefing</h3><span class="badge-soon">Monthly</span></div>
+        <p>We're not raising right now — but if you want to follow the build, a short monthly note from the founder covers what shipped, what we learned, and where it's going. No pitch, no spam.</p>
+        <div class="res-meta">Five bullets a month &middot; reply straight to the founder</div>
+        <div style="margin-top:auto;padding-top:14px"><a class="btn btn-sm btn-glow" href="mailto:tyler@meddevautomation.com?subject=Founder%20Briefing%20%E2%80%94%20add%20me&body=Add%20me%20to%20the%20monthly%20founder%20briefing.%0A%0AName%3A%0ACompany%20(optional)%3A%0A">Join the briefing</a></div>
       </div>
     </div>
   </div>
