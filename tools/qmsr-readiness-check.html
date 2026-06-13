@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free QMSR Readiness Self-Check | MedDev Automation</title>
+<meta name="description" content="A free 10-question self-check on your readiness for the FDA QMSR transition. Built by a Certified Lead Auditor. No signup required to get your score.">
+<link rel="canonical" href="https://meddevautomation.com/tools/qmsr-readiness-check.html">
+<meta property="og:title" content="Free QMSR Readiness Self-Check">
+<meta property="og:description" content="10 questions, an honest score, and where to focus next — for medical device teams mid-QMSR-transition.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="../blog/style.css" rel="stylesheet">
+<style>
+.tool{max-width:720px;margin:0 auto;padding:50px 28px}
+.q{background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:22px 26px;margin-bottom:14px}
+.q .qt{font-family:var(--display);font-weight:600;font-size:17px;margin-bottom:14px;line-height:1.4}
+.q .qt .ref{font-family:var(--mono);font-size:11px;color:var(--glow-hi);background:var(--glow-soft);border-radius:5px;padding:2px 7px;margin-left:6px;font-weight:700}
+.opts{display:flex;gap:10px;flex-wrap:wrap}
+.opt{flex:1;min-width:120px;text-align:center;border:1.5px solid var(--hair);border-radius:10px;padding:11px;cursor:pointer;font-size:14px;font-weight:500;color:var(--granite);transition:all .15s;user-select:none}
+.opt:hover{border-color:var(--glow)}
+.opt.sel{border-color:var(--glow);background:var(--glow-soft);color:var(--glow-hi);font-weight:600}
+.bar{position:sticky;bottom:0;background:var(--surface);border-top:1px solid var(--hair);padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 -8px 24px -16px rgba(20,30,42,.3)}
+.bar .prog{font-family:var(--mono);font-size:13px;color:var(--granite)}
+.bar .btn[disabled]{opacity:.4;pointer-events:none}
+#result{display:none;background:linear-gradient(135deg,var(--side1),var(--side3));color:#fff;border-radius:20px;padding:44px;text-align:center;margin-top:20px}
+#result .score{font-family:var(--display);font-weight:800;font-size:64px;line-height:1;color:#FFD9AE}
+#result .stier{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#94A0AC;margin:14px 0 18px}
+#result h2{font-family:var(--display);font-weight:700;font-size:24px;color:#fff;margin-bottom:12px}
+#result p{color:#C2CEDA;font-size:16px;max-width:480px;margin:0 auto 10px}
+#result .gaps{text-align:left;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 24px;margin:24px 0;max-width:520px;margin-left:auto;margin-right:auto}
+#result .gaps b{color:#fff;font-size:14px;display:block;margin-bottom:8px;font-family:var(--mono);letter-spacing:.04em}
+#result .gaps li{color:#AEBFCE;font-size:14.5px;margin-bottom:6px}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a class="logo" href="/"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18L10 6l4 7 3-4 4 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>MedDev <small>Automation</small></a>
+  <div class="nav-links"><a href="/blog/">Blog</a><a href="/#founding">Founding Partner</a><a href="/#access">Waitlist</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="evt">Free tool · No signup to see your score</span>
+  <h1>QMSR Readiness Self-Check</h1>
+  <p>Ten honest questions about your transition from the QSR to the FDA QMSR. Answer against what your records actually show — not what you intend to do. Built by a Certified Lead Auditor.</p>
+</div></header>
+
+<div class="tool">
+  <div id="quiz"></div>
+  <div id="result">
+    <div class="score" id="scoreNum">0%</div>
+    <div class="stier" id="scoreTier"></div>
+    <h2 id="scoreHead"></h2>
+    <p id="scoreMsg"></p>
+    <div class="gaps" id="gapBox" style="display:none"><b>Focus here first</b><ul id="gapList"></ul></div>
+    <p style="margin-top:18px"><a class="btn" href="/#resources">Get the full gap-assessment toolkit</a></p>
+    <p style="font-size:13px;margin-top:14px;color:#7E92A6">Educational self-assessment, not regulatory advice. Verify requirements at ecfr.gov.</p>
+  </div>
+</div>
+
+<div class="bar" id="bar">
+  <span class="prog" id="prog">0 of 10 answered</span>
+  <button class="btn" id="seeBtn" disabled>See my readiness score</button>
+</div>
+
+<footer><div class="wrap"><div class="fin">
+  <span class="fmark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18L10 6l4 7 3-4 4 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  © 2026 MedDev Automation Technologies, LLC · <a href="/">meddevautomation.com</a>
+</div></div></footer>
+
+<script>
+const Q = [
+  {t:"Have you formally assessed your QMS against the QMSR delta — not the whole standard — with the assessment documented and management-approved?", ref:""},
+  {t:"Do your quality manual and procedures reference QMSR clauses rather than repealed QSR section numbers?", ref:""},
+  {t:"Have you reconciled legacy terminology (DHF / DMR / DHR) to the medical-device-file structure the QMSR framework expects, with a clear mapping?", ref:""},
+  {t:"Do your records meet the FDA-specific additions layered on top of ISO 13485 — signature/date expectations and complaint-file specifics?", ref:"820.35"},
+  {t:"Does your labeling control procedure explicitly address the FDA-retained labeling & packaging requirements, with examination and release recorded and attributed?", ref:"820.45"},
+  {t:"Does complaint evaluation produce a documented reportability decision — including a written rationale when you decide NOT to report?", ref:"803/806"},
+  {t:"Is your risk-based approach applied to QMS processes (not only product risk) and visible in planning records?", ref:""},
+  {t:"Has your workforce been trained on the QMSR changes relevant to their function, with effectiveness evaluated — not just attendance recorded?", ref:""},
+  {t:"Does your internal audit program cover the new requirement set on a planned, risk-informed schedule, with auditor independence?", ref:""},
+  {t:"Could you produce your transition evidence — the gap assessment and its remediation to closure — on demand today, without a scramble?", ref:""}
+];
+const A = ["Yes, evidenced","Partially","Not yet"];
+const answers = {};
+const quiz = document.getElementById('quiz');
+Q.forEach((q,i)=>{
+  const d = document.createElement('div'); d.className='q';
+  d.innerHTML = `<div class="qt">${i+1}. ${q.t}${q.ref?`<span class="ref">${q.ref}</span>`:''}</div>`;
+  const o = document.createElement('div'); o.className='opts';
+  A.forEach((a,ai)=>{
+    const b = document.createElement('div'); b.className='opt'; b.textContent=a;
+    b.onclick=()=>{ answers[i]=2-ai; [...o.children].forEach(c=>c.classList.remove('sel')); b.classList.add('sel'); upd(); };
+    o.appendChild(b);
+  });
+  d.appendChild(o); quiz.appendChild(d);
+});
+function upd(){
+  const n = Object.keys(answers).length;
+  document.getElementById('prog').textContent = n+" of 10 answered";
+  document.getElementById('seeBtn').disabled = n<10;
+}
+document.getElementById('seeBtn').onclick=()=>{
+  const pts = Object.values(answers).reduce((a,b)=>a+b,0);
+  const pct = Math.round(pts/20*100);
+  const gaps = Q.map((q,i)=>({q,v:answers[i]})).filter(x=>x.v<2).slice(0,4);
+  let tier, head, msg;
+  if(pct>=85){tier="Audit-ready";head="You're in strong shape.";msg="Your transition evidence looks defensible. Tighten the few partials and keep the assessment as a living record.";}
+  else if(pct>=60){tier="On track, gaps remain";head="Solid foundation, real gaps.";msg="The bones are there. The items below are where an investigator's questions would land first — close them and document the closure.";}
+  else if(pct>=35){tier="Significant exposure";head="The delta isn't closed yet.";msg="Certification is doing a lot of assumed work here. A structured pass against the FDA-specific layer is the priority before your next inspection.";}
+  else{tier="High risk";head="Start the structured pass now.";msg="The gap between 'certified' and 'QMSR-ready' is wide right now. The good news: a focused delta assessment closes most of it faster than you'd expect.";}
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('bar').style.display='none';
+  document.getElementById('scoreNum').textContent=pct+"%";
+  document.getElementById('scoreTier').textContent=tier;
+  document.getElementById('scoreHead').textContent=head;
+  document.getElementById('scoreMsg').textContent=msg;
+  if(gaps.length){
+    document.getElementById('gapBox').style.display='block';
+    document.getElementById('gapList').innerHTML = gaps.map(g=>`<li>${g.q.ref?`(${g.q.ref}) `:''}${g.q.t.split('—')[0].split('?')[0].slice(0,90)}…</li>`).join('');
+  }
+  document.getElementById('result').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+</script>
+</body>
+</html>
