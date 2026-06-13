@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The QMSR Transition: What ISO 13485 Certification Doesn't Cover | MedDev Automation</title>
+<meta name="description" content="The FDA QMSR incorporates ISO 13485 by reference — but keeps FDA-specific requirements on top. A certified auditor breaks down the records, labeling, and reporting gaps certification doesn't close.">
+<link rel="canonical" href="https://meddevautomation.com/blog/qmsr-iso-13485-gap.html">
+<meta property="og:title" content="The QMSR Transition: What ISO 13485 Certification Doesn't Cover">
+<meta property="og:description" content="The gaps ISO-certified teams miss in the move to FDA's Quality Management System Regulation — from a Certified Lead Auditor.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://meddevautomation.com/blog/qmsr-iso-13485-gap.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"The QMSR Transition: What ISO 13485 Certification Doesn't Cover","description":"The FDA QMSR incorporates ISO 13485 by reference but retains FDA-specific requirements. A breakdown of the gaps certification doesn't close.","author":{"@type":"Person","name":"Tyler Ford"},"publisher":{"@type":"Organization","name":"MedDev Automation Technologies, LLC"},"mainEntityOfPage":"https://meddevautomation.com/blog/qmsr-iso-13485-gap.html"}
+</script>
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a class="logo" href="/"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18L10 6l4 7 3-4 4 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>MedDev <small>Automation</small></a>
+  <div class="nav-links"><a href="/blog/">Blog</a><a href="/#founding">Founding Partner</a><a href="/#access">Waitlist</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="evt">QMSR Transition · Quality &amp; Regulatory</span>
+  <h1>What ISO 13485 certification doesn't cover in the QMSR transition</h1>
+  <p>The most expensive assumption in quality right now is that an ISO 13485 certificate means the transition is handled. It doesn't — and here's exactly where the gaps hide.</p>
+</div></header>
+
+<article><div class="wrap">
+  <div class="meta"><span>By Tyler Ford, Certified Lead Auditor</span><span>·</span><span>RAPS</span><span>·</span><span>~8 min read</span></div>
+
+  <p class="lede">"We're ISO 13485 certified, so the QMSR transition doesn't really change much for us." If that sentence has been said in your quality system review, it deserves a second look. Certification proves you built to one code. The QMSR is a second inspector arriving with a few requirements specific to this jurisdiction — and "we passed the first inspection" is not an answer to the second one.</p>
+
+  <h2>What actually changed</h2>
+  <p>The FDA's Quality Management System Regulation amends 21 CFR Part 820 to incorporate ISO 13485:2016 by reference, replacing much of the language device manufacturers knew as the Quality System Regulation (QSR). On the surface, for an already-certified organization, that sounds like a lateral move. The trap is in the phrase <strong>by reference</strong>: incorporation is not substitution. FDA layered a set of agency-specific requirements on top of the ISO baseline, and your certificate speaks only to the baseline.</p>
+  <p>So the honest question for a certified shop isn't "are we compliant with ISO 13485?" — you are, by definition. It's "what did FDA keep, add, or define differently, and where in our system does that live?" That delta is the entire transition. Three areas are where I most often watch teams walk straight past it.</p>
+
+  <h2>1. Record-keeping additions (21 CFR 820.35)</h2>
+  <p>ISO 13485 has robust control-of-records requirements, and a certified system will satisfy them. But the QMSR retains FDA-specific record expectations that the ISO clause doesn't spell out in the same way — including signature and date conventions on required records and particular expectations around complaint-handling documentation. A record can be fully conformant to the ISO clause and still be missing what an FDA investigator expects to see.</p>
+  <p>The practical failure mode: a complaint file that documents the investigation and outcome perfectly by ISO standards, but where a no-investigation decision wasn't justified in writing, or where the attribution an inspector looks for isn't captured. The record exists. The FDA-specific layer on top of it doesn't.</p>
+
+  <h2>2. Labeling and packaging controls (21 CFR 820.45)</h2>
+  <p>This is the one I'd put money on being the most common blind spot. The QMSR retains FDA-specific labeling and packaging control requirements that sit <em>beyond</em> the corresponding ISO 13485 clause. Teams that have internalized "ISO covers labeling" tend to assume the box is checked. It isn't fully — the agency kept specific expectations here, and they need to be findable in your system as deliberate controls, not assumed coverage.</p>
+  <p>If you do nothing else from this article, pull your labeling control procedure and ask: does it address the FDA-retained requirements explicitly, with examination and release activities recorded and attributed? Or does it lean on the ISO clause and hope?</p>
+
+  <h2>3. Reporting linkages (Parts 803 and 806)</h2>
+  <p>Medical Device Reporting (Part 803) and corrections-and-removals reporting (Part 806) don't live inside the QMSR, but your quality system has to connect to them cleanly. The transition is a good moment to verify that complaint evaluation produces a documented reportability decision — <strong>either way</strong>, including a defensible rationale when you decide <em>not</em> to report. "We talked about it and agreed it wasn't reportable" is not a record. The decision, and the basis for it, is.</p>
+
+  <h2>A terminology reconciliation nobody enjoys but everyone needs</h2>
+  <p>Under the QSR, you spoke in DHF, DMR, and DHR. ISO 13485 frames the same evidence differently — a medical device file, documented information structured its own way. After the transition, your quality manual and procedures shouldn't be speaking two languages in two different documents with no map between them. Reconcile the vocabulary, state which definition governs where the QMSR retains FDA-specific definitions that differ from ISO usage, and document any clause assessed not-applicable with a rationale that matches your device types. It's unglamorous. It's also exactly the kind of internal consistency an auditor reads as a signal of system maturity.</p>
+
+  <div class="callout">
+    <span class="k">A practical approach</span>
+    <p>Don't re-assess the whole standard — assess the <strong>delta</strong>. Work section by section against the FDA-specific layer, score each item against the actual record in front of you (not memory), and route every gap to a remediation log with an owner and a date. Re-assess after remediation and keep both passes. That pair of assessments <em>is</em> your transition evidence when an investigator or notified body asks how you handled the change.</p>
+  </div>
+
+  <h2>Make the transition evidence work twice</h2>
+  <p>Here's the mindset shift that separates calm quality systems from scrambling ones: the work you do to <em>verify</em> the transition should also be the work that <em>proves</em> it. A gap assessment that lives in a spreadsheet someone has to find later is a cost. The same assessment, structured as a controlled record with remediation tracked to closure, is an asset — it answers the inspector's question before it's asked. Audit-ready isn't a state you achieve the week before; it's a byproduct of doing the assessment in a form that keeps its own evidence.</p>
+  <p>That principle — that the system should capture proof as the work happens, rather than reconstruct it afterward — is the entire reason I'm building what I'm building. But you don't need a platform to apply it this week. You need a structured pass against the delta and the discipline to keep the record.</p>
+
+  <div class="cta-box">
+    <h3>A structured QMSR gap pass, ready to use</h3>
+    <p>I'm finishing a practical, section-by-section QMSR Transition Gap-Assessment Toolkit — the delta, the evidence to pull, and a remediation plan that doubles as your transition record. Join the list to get it first.</p>
+    <a class="btn" href="/#resources">See the resources</a>
+  </div>
+
+  <p class="disclaimer">This article is educational analysis from a certified quality auditor and is not legal or regulatory advice. Regulatory citations refer to 21 CFR Part 820 as amended (QMSR) and related parts; always verify current regulatory text directly at ecfr.gov, and read ISO 13485:2016 from your own licensed copy. Reproduce nothing here as a substitute for the regulation itself.</p>
+
+  <div class="author">
+    <span class="seal"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18L10 6l4 7 3-4 4 9" stroke="#C9762C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <div><b>Tyler Ford</b><span>Certified Lead Auditor · RAPS Certificate · 10+ years, medical device quality &amp; regulatory. Founder of MedDev Automation — the QMS that keeps its own evidence.</span></div>
+  </div>
+</div></article>
+
+<footer><div class="wrap"><div class="fin">
+  <span class="fmark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18L10 6l4 7 3-4 4 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  © 2026 MedDev Automation Technologies, LLC · <a href="/">meddevautomation.com</a>
+</div></div></footer>
+</body>
+</html>

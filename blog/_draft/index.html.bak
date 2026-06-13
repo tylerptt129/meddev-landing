@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Quality &amp; Regulatory Field Notes | MedDev Automation</title>
+<meta name="description" content="Practical quality and regulatory writing for medical device teams — QMSR transition, CAPA, training effectiveness, audit readiness — from a Certified Lead Auditor building a better QMS.">
+<link rel="canonical" href="https://meddevautomation.com/blog/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a class="logo" href="/"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18L10 6l4 7 3-4 4 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>MedDev <small>Automation</small></a>
+  <div class="nav-links"><a href="/blog/">Blog</a><a href="/#founding">Founding Partner</a><a href="/#access">Waitlist</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="evt">Field notes</span>
+  <h1>Quality &amp; regulatory, from inside the build</h1>
+  <p>Practical writing for medical device teams — the QMSR transition, CAPA that actually closes, training that actually sticks, audits that don't require archaeology. Written by a Certified Lead Auditor building the QMS he always wished existed.</p>
+</div></header>
+
+<section class="post-list"><div class="wrap">
+
+  <a class="post-card" href="qmsr-iso-13485-gap.html">
+    <span class="tag">QMSR · Regulatory</span>
+    <h2>What ISO 13485 certification doesn't cover in the QMSR transition</h2>
+    <p>"We're certified, so we're done" is the most expensive assumption in quality right now. The records, labeling, and reporting gaps the certificate doesn't close — and a practical way to assess the delta.</p>
+    <span class="rd">Read →  ·  ~8 min</span>
+  </a>
+
+  <div class="post-card soon">
+    <span class="tag">Quality · Coming soon</span>
+    <h2>Sign-and-date is not training effectiveness</h2>
+    <p>Why a name and a timestamp prove attendance, not competence — and how to right-size the training method to the actual risk of a change without drowning your team.</p>
+    <span class="rd">In the works</span>
+  </div>
+
+  <div class="post-card soon">
+    <span class="tag">Quality · Coming soon</span>
+    <h2>"Closed" is not the same as "effective"</h2>
+    <p>If your CAPA effectiveness check shares a date with closure, it's a hope, not a verification. Defining real criteria and windows — and keeping correction, corrective, and preventive honest.</p>
+    <span class="rd">In the works</span>
+  </div>
+
+</div></section>
+
+<footer><div class="wrap"><div class="fin">
+  <span class="fmark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18L10 6l4 7 3-4 4 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  © 2026 MedDev Automation Technologies, LLC · <a href="/">meddevautomation.com</a>
+</div></div></footer>
+</body>
+</html>
