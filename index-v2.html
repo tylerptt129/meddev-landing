@@ -366,6 +366,52 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 .gap-note{margin-top:22px;font-size:13.5px;color:var(--granite);text-align:center}
 .gap-note b{color:var(--ink);font-weight:600}
 @media (max-width:820px){.gaps{grid-template-columns:1fr}}
+/* three gaps across */
+.gaps.three{grid-template-columns:repeat(3,1fr)}
+.gaps.three .gap{padding:28px 26px 24px}
+.gaps.three .gap h3{font-size:18.5px}
+.gaps.three .gap .g-body{font-size:13.5px}
+@media (max-width:1000px){.gaps.three{grid-template-columns:1fr}}
+
+/* ============ KPI section ============ */
+.kpi-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:center}
+.kpi-points{display:flex;flex-direction:column;gap:18px}
+.kpi-pt{display:flex;gap:13px;align-items:flex-start}
+.kpi-pt .kp-ic{flex:none;width:34px;height:34px;border-radius:10px;background:var(--glow-soft);display:grid;place-items:center;margin-top:1px}
+.kpi-pt .kp-ic svg{width:18px;height:18px}
+.kpi-pt b{font-size:15px;font-weight:600;display:block;margin-bottom:2px}
+.kpi-pt span{font-size:13.5px;color:var(--granite);line-height:1.5}
+/* the card */
+.kpi-card{background:var(--surface);border:1px solid var(--hair);border-radius:20px;padding:26px 28px 22px;box-shadow:0 34px 70px -40px rgba(20,30,42,.34);position:relative;overflow:hidden}
+.kpi-card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(221,134,56,.4),rgba(47,138,99,.3));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.6;pointer-events:none}
+.kpi-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:4px}
+.kpi-ttl{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink)}
+.kpi-live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--pine);background:var(--pine-soft);border:1px solid #BEE0CF;border-radius:999px;padding:4px 10px}
+.kpi-live .lvd{width:6px;height:6px;border-radius:50%;background:var(--pine);box-shadow:0 0 0 3px rgba(47,138,99,.18);animation:pulse 2.2s ease infinite}
+.kpi-sub{font-size:12.5px;color:var(--granite);margin-bottom:14px}
+.kpi-readout{display:flex;align-items:flex-end;gap:14px;margin-bottom:6px}
+.kpi-big{font-family:var(--display);font-weight:800;font-size:54px;letter-spacing:-.03em;line-height:.9;color:var(--ink)}
+.kpi-trend{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:var(--pine);background:var(--pine-soft);border-radius:8px;padding:5px 10px;margin-bottom:7px}
+.kpi-trend svg{width:13px;height:13px}
+/* chart */
+.kpi-chart{margin:6px -6px -2px}
+.kpi-chart svg{width:100%;height:auto;display:block;overflow:visible}
+.spark-grid line{stroke:var(--hair);stroke-width:1}
+.spark-area{fill:url(#kpiFill);opacity:0;transition:opacity 1.3s ease .5s}
+.spark-line{fill:none;stroke:url(#kpiStroke);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:490;stroke-dashoffset:490;transition:stroke-dashoffset 1.9s cubic-bezier(.3,.7,.3,1)}
+.spark-dot{fill:#fff;stroke:var(--glow-hi);stroke-width:2.4;opacity:0;transition:opacity .4s ease}
+.spark-dot.end{stroke:var(--pine)}
+.spark-x{font-family:var(--mono);font-size:9px;fill:var(--mist);letter-spacing:.04em}
+.rv.in .spark-area{opacity:1}
+.rv.in .spark-line{stroke-dashoffset:0}
+.rv.in .spark-dot{opacity:1;transition-delay:1.5s}
+.rv.in .spark-dot.end{transition-delay:1.9s}
+.kpi-foot{display:flex;align-items:center;gap:9px;margin-top:12px;padding-top:13px;border-top:1px solid var(--hair);font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--mist);flex-wrap:wrap}
+.kpi-foot .dot-sep{width:3px;height:3px;border-radius:50%;background:var(--mist)}
+.kpi-foot b{color:var(--granite);font-weight:700}
+.kpi-bridge{margin-top:26px;text-align:center;font-size:13.5px;color:var(--granite)}
+.kpi-bridge b{color:var(--ink);font-weight:600}
+@media (max-width:860px){.kpi-grid{grid-template-columns:1fr;gap:26px}.kpi-big{font-size:46px}}
 </style>
 </head>
 <body>
@@ -531,7 +577,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
       <h2>The hard parts, handled by design.</h2>
       <p>Some things in a quality system are genuinely hard to keep clean. We took the ones teams struggle with most and built the answer into the foundation — so the right thing happens by default, and the record protects itself.</p>
     </div>
-    <div class="gaps rv stagger">
+    <div class="gaps three rv stagger">
 
       <!-- GAP 1 -->
       <div class="gap" style="--ga:var(--glow-hi)">
@@ -573,8 +619,105 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
         </div>
       </div>
 
+      <!-- GAP 3 -->
+      <div class="gap" style="--ga:var(--pine)">
+        <div class="g-k">Gap 03 · CAPA effectiveness</div>
+        <h3>A corrective action isn't closed when it's done — it's closed when it's proven to work.</h3>
+        <p class="g-body">CAPA is one of the most-cited problem areas in the industry, and the failure is consistent: systems let a CAPA <b>close on implementation</b> — the action was taken, the box was checked. But the standard expects evidence that the action actually <b>worked</b> and the problem didn't come back. That verification step is where teams fall short.</p>
+        <div class="g-steps">
+          <div class="g-step"><span class="gs-n">1</span><span class="gs-t">The corrective action is implemented — but the CAPA <b>can't reach Closed yet.</b></span></div>
+          <div class="g-step"><span class="gs-n">2</span><span class="gs-t">An effectiveness check is required first: a <b>defined method, a measurement window, and objective evidence</b> that the action held.</span></div>
+          <div class="g-step"><span class="gs-n">3</span><span class="gs-t">Only when effectiveness is verified — recurrence didn't happen — can the CAPA <b>close, with the proof attached.</b></span></div>
+        </div>
+        <div class="g-clause">
+          <div class="gc-label">Addresses gaps commonly found in</div>
+          <div class="gc-tags">
+            <span class="gc"><b>ISO 13485</b></span>
+            <span class="gc"><b>FDA QMSR</b> (21 CFR Part 820)</span>
+          </div>
+        </div>
+      </div>
+
     </div>
     <p class="gap-note rv"><b>Built in as core, not bolted on.</b> The connection between modules isn't a reminder someone has to honor — it's the architecture.</p>
+  </div>
+</section>
+
+<!-- ================= KPI ================= -->
+<section id="kpi" class="problem">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="evt tick rv">EVT-0005 · Metrics you can trust</span>
+      <h2>KPIs that are built in — and built right.</h2>
+      <p>Most teams build their own metrics in spreadsheets and quietly wonder whether the numbers are right. MedDev Automation computes them from the same record that captures the work — set up correctly from day one, updating in real time, and designed to actually move the process forward.</p>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-points rv stagger">
+        <div class="kpi-pt">
+          <span class="kp-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="#C9762C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="8.5" stroke="#C9762C" stroke-width="2.2"/></svg></span>
+          <div><b>Real-time, never stale.</b><span>The number updates the moment the work does — no month-end export, no manual refresh, no wondering how old it is.</span></div>
+        </div>
+        <div class="kpi-pt">
+          <span class="kp-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 13l4 4L20 5" stroke="#C9762C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><b>Set up correctly, by construction.</b><span>The metric is defined once, in the platform — not re-derived in a spreadsheet each quarter. Everyone sees the same number, computed the same way.</span></div>
+        </div>
+        <div class="kpi-pt">
+          <span class="kp-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 16l3-4 3 2 4-6" stroke="#C9762C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><b>Built to improve the process.</b><span>It tracks something you can act on — so a dip is a signal to fix, not a number to explain away in the next review.</span></div>
+        </div>
+      </div>
+
+      <div class="kpi-card rv">
+        <div class="kpi-top">
+          <span class="kpi-ttl">On-time training completion</span>
+          <span class="kpi-live"><span class="lvd"></span> Live</span>
+        </div>
+        <div class="kpi-sub">After each controlled-document release · trailing 8 quarters</div>
+        <div class="kpi-readout">
+          <span class="kpi-big statnum" data-count="96.5" data-decimals="1" data-suffix="%">0%</span>
+          <span class="kpi-trend"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18l7-7 4 4 5-7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8h5v5" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> trending up</span>
+        </div>
+        <div class="kpi-chart">
+          <svg viewBox="0 0 520 190" role="img" aria-label="On-time training completion trending upward over eight quarters">
+            <defs>
+              <linearGradient id="kpiStroke" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#DD8638"/><stop offset="1" stop-color="#2F8A63"/>
+              </linearGradient>
+              <linearGradient id="kpiFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#DD8638" stop-opacity=".22"/><stop offset="1" stop-color="#DD8638" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g class="spark-grid">
+              <line x1="34" y1="34" x2="498" y2="34"/>
+              <line x1="34" y1="84" x2="498" y2="84"/>
+              <line x1="34" y1="134" x2="498" y2="134"/>
+            </g>
+            <path class="spark-area" d="M 34.0 168 L 34.0 153.9 L 100.3 130.5 L 166.6 139.9 L 232.9 102.4 L 299.1 88.3 L 365.4 74.2 L 431.7 55.5 L 498.0 34.4 L 498.0 168 Z"/>
+            <path class="spark-line" d="M 34.0 153.9 L 100.3 130.5 L 166.6 139.9 L 232.9 102.4 L 299.1 88.3 L 365.4 74.2 L 431.7 55.5 L 498.0 34.4"/>
+            <circle class="spark-dot" cx="34" cy="153.9" r="3.2"/>
+            <circle class="spark-dot" cx="100.3" cy="130.5" r="3.2"/>
+            <circle class="spark-dot" cx="166.6" cy="139.9" r="3.2"/>
+            <circle class="spark-dot" cx="232.9" cy="102.4" r="3.2"/>
+            <circle class="spark-dot" cx="299.1" cy="88.3" r="3.2"/>
+            <circle class="spark-dot" cx="365.4" cy="74.2" r="3.2"/>
+            <circle class="spark-dot" cx="431.7" cy="55.5" r="3.2"/>
+            <circle class="spark-dot end" cx="498" cy="34.4" r="5"/>
+            <g class="spark-x">
+              <text x="34" y="184">Q1</text>
+              <text x="166.6" y="184" text-anchor="middle">Q2</text>
+              <text x="299.1" y="184" text-anchor="middle">Q3</text>
+              <text x="498" y="184" text-anchor="end">now</text>
+            </g>
+          </svg>
+        </div>
+        <div class="kpi-foot">
+          <span>Computed from the audit trail</span><span class="dot-sep"></span>
+          <span><b>every release counted</b></span><span class="dot-sep"></span>
+          <span>drill into any point</span>
+        </div>
+      </div>
+    </div>
+    <p class="kpi-bridge rv"><b>This is Gap 01, measured.</b> When a document changes, did training actually complete on time? Here's that exact question — answered live, from the record itself.</p>
   </div>
 </section>
 
@@ -582,7 +725,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 <section id="modules">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="evt tick rv">EVT-0005 · Scope of the system</span>
+      <span class="evt tick rv">EVT-0006 · Scope of the system</span>
       <h2>One platform. The whole quality system — and beyond.</h2>
       <p>Quality is the core, not the boundary. Adopt the full platform or start with the modules your team needs — each one ships when it meets the bar, all on the same signature and audit backbone.</p>
     </div>
@@ -699,7 +842,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
   <div class="wrap">
     <div class="cta-band rv">
       <div>
-        <span class="evt tick rv">EVT-0006 · The waitlist is open</span>
+        <span class="evt tick rv">EVT-0009 · The waitlist is open</span>
         <h2>Be in the room when it opens.</h2>
         <p>We're building this right — validated, documented, and audit-ready before it ever reaches a customer, targeting launch in 2027. Waitlist members hear from the founder first, get first access, and shape what ships as design-partner spots open up.</p>
       </div>
@@ -768,13 +911,15 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
   function countUp(el){
     var target = parseFloat(el.getAttribute('data-count'));
     var suffix = el.getAttribute('data-suffix') || '';
-    if(reduce){ el.textContent = target + suffix; return; }
-    var dur = 1100, start = null;
+    var dec = parseInt(el.getAttribute('data-decimals'),10) || 0;
+    var fmt = function(v){ return dec ? v.toFixed(dec) : Math.round(v); };
+    if(reduce){ el.textContent = fmt(target) + suffix; return; }
+    var dur = 1400, start = null;
     function step(ts){
       if(!start) start = ts;
       var p = Math.min((ts-start)/dur, 1);
       var eased = 1 - Math.pow(1-p, 3);
-      el.textContent = Math.round(target*eased) + suffix;
+      el.textContent = fmt(target*eased) + suffix;
       if(p<1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
