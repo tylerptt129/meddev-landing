@@ -56,7 +56,7 @@ img{max-width:100%}
 .nav-links a:hover{color:#fff}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;white-space:nowrap;font-family:var(--body);font-weight:600;font-size:14.5px;border-radius:10px;padding:13px 24px;cursor:pointer;border:0;transition:transform .15s ease, box-shadow .2s ease, background .2s ease}
 .btn:active{transform:translateY(1px)}
-.btn-glow{background:linear-gradient(180deg,#E59048,var(--glow));color:#fff;box-shadow:0 8px 24px -10px rgba(221,134,56,.55), inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-glow{background:linear-gradient(180deg,#E59048,var(--glow));color:#fff!important;box-shadow:0 8px 24px -10px rgba(221,134,56,.55), inset 0 1px 0 rgba(255,255,255,.25)}
 .btn-glow:hover{box-shadow:0 12px 30px -10px rgba(221,134,56,.7)}
 .btn-ghost-d{background:rgba(255,255,255,.06);color:#E8EEF4;border:1px solid rgba(255,255,255,.14)}
 .btn-ghost-d:hover{background:rgba(255,255,255,.11)}
@@ -80,7 +80,7 @@ img{max-width:100%}
 .chips-label{font-size:11px;color:#B7C4D1;margin-top:30px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
 
 /* ============ faux app (signature element) ============ */
-.app{border-radius:18px;background:#101A24;border:1px solid rgba(255,255,255,.09);box-shadow:0 40px 90px -30px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.3), 0 0 80px -20px rgba(221,134,56,.12);overflow:hidden;font-size:13px;transform:perspective(1600px) rotateY(-3deg) rotateX(1deg);transition:transform .6s ease;max-width:560px;justify-self:end}
+.app{border-radius:18px;background:#101A24;border:1px solid rgba(255,255,255,.09);box-shadow:0 40px 90px -34px rgba(0,0,0,.6), 0 0 0 1px rgba(0,0,0,.25);overflow:hidden;font-size:13px;transform:perspective(1600px) rotateY(-3deg) rotateX(1deg);transition:transform .6s ease;max-width:560px;justify-self:end}
 .app:hover{transform:perspective(1600px) rotateY(-1.5deg) rotateX(.5deg)}
 
 .app-side{background:linear-gradient(180deg,#1E2E3F,#141F2B);padding:13px 9px;border-right:1px solid rgba(255,255,255,.05)}
@@ -280,8 +280,8 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
    ============================================================ */
 /* cursor-reactive aurora in the hero */
 .aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.aurora b{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;mix-blend-mode:screen;will-change:transform}
-.aurora .a1{width:560px;height:560px;background:radial-gradient(circle,#DD8638,transparent 62%);left:calc(var(--mx,72%) - 280px);top:calc(var(--my,8%) - 200px);transition:left .9s cubic-bezier(.2,.7,.2,1),top .9s cubic-bezier(.2,.7,.2,1)}
+.aurora b{position:absolute;border-radius:50%;filter:blur(64px);opacity:.34;mix-blend-mode:screen;will-change:transform}
+.aurora .a1{width:360px;height:360px;background:radial-gradient(circle,#DD8638,transparent 66%);left:calc(var(--mx,72%) - 180px);top:calc(var(--my,8%) - 130px);transition:left .35s cubic-bezier(.2,.7,.2,1),top .35s cubic-bezier(.2,.7,.2,1)}
 .aurora .a2{width:640px;height:640px;background:radial-gradient(circle,#3A5B82,transparent 60%);right:-160px;top:36%;opacity:.55;animation:drift 18s ease-in-out infinite alternate}
 .aurora .a3{width:420px;height:420px;background:radial-gradient(circle,#2E8C97,transparent 60%);left:-120px;bottom:-120px;opacity:.4;animation:drift2 22s ease-in-out infinite alternate}
 @keyframes drift{to{transform:translate(-60px,40px) scale(1.08)}}
