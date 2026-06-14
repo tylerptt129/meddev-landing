@@ -119,6 +119,9 @@ section{padding:104px 0}
 
 /* problem strip */
 .problem{background:var(--surface);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+#why{background:linear-gradient(180deg,#F7FAFC 0%, #E6ECF3 100%);border-bottom:0}
+#why .sec-head .evt{color:var(--dusk-ink)}
+#why .prob-grid{box-shadow:0 26px 64px -36px rgba(25,35,47,.5), 0 2px 8px -4px rgba(25,35,47,.1)}
 .prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--hair);border-radius:16px;overflow:hidden;background:var(--surface)}
 .prob{padding:34px 32px;border-right:1px solid var(--hair)}
 .prob:last-child{border-right:0}
@@ -277,13 +280,13 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
    v2 — 2026 motion & depth layer (additive, on-brand)
    ============================================================ */
 /* cursor-reactive aurora removed — faint mountain ranges instead */
-.hero-mtns{position:absolute;left:0;right:0;bottom:0;height:64%;z-index:1;pointer-events:none}
-.hero-mtns svg{width:100%;height:100%;display:block}
-.mtn-back{fill:url(#mtnBack)}
-.mtn-mid{fill:#1B2C3E;opacity:.55}
-.mtn-front{fill:#101C28;opacity:.85}
+/* glowing alpenglow mountains at the hero bottom */
+.hero-mtns{position:absolute;left:0;right:0;bottom:0;height:52%;z-index:1;pointer-events:none;overflow:hidden}
+.alpen-sun{position:absolute;left:50%;bottom:2%;width:1300px;height:440px;transform:translateX(-50%);background:radial-gradient(ellipse 48% 88% at 50% 100%, rgba(236,150,70,.72), rgba(226,138,58,.24) 40%, transparent 70%);filter:blur(5px)}
+.hero-mtns svg{position:absolute;bottom:0;left:0;width:100%;height:80%;display:block}
+.ar-back{fill:#1B2C3D;opacity:.92}
+.ar-front{fill:#0B1320}
 .hero-in,.hero .ridge{position:relative;z-index:2}
-.hero .ridge{z-index:3}
 .hero-grid{z-index:1}
 
 /* springy, staggered reveals (upgrades .rv) */
@@ -405,6 +408,18 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 .rv.in .spark-line{stroke-dashoffset:0}
 .rv.in .spark-dot{opacity:1;transition-delay:1.5s}
 .rv.in .spark-dot.end{transition-delay:1.9s}
+/* 90% target line + legend */
+.spark-target{stroke:#6B7785;stroke-width:1.6;stroke-dasharray:5 4;opacity:0;transition:opacity .5s ease .9s}
+.rv.in .spark-target{opacity:.95}
+.spark-target-lbl{font-family:var(--mono);font-size:8px;fill:#5C6775;letter-spacing:.07em;font-weight:700;opacity:0;transition:opacity .5s ease 1s}
+.rv.in .spark-target-lbl{opacity:1}
+.spark-dot.under{stroke:var(--glow-hi)}
+.spark-dot.over{stroke:var(--pine)}
+.kpi-legend{display:flex;gap:20px;justify-content:center;margin:6px 0 2px;font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--granite);text-transform:uppercase}
+.kpi-legend .kl{display:inline-flex;align-items:center;gap:7px}
+.kpi-legend i{width:18px;display:inline-block}
+.kpi-legend .kl-actual{height:3px;background:linear-gradient(90deg,#DD8638,#2F8A63);border-radius:2px}
+.kpi-legend .kl-target{height:0;border-top:2px dashed #6B7785}
 .kpi-foot{display:flex;align-items:center;gap:9px;margin-top:12px;padding-top:13px;border-top:1px solid var(--hair);font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--mist);flex-wrap:wrap}
 .kpi-foot .dot-sep{width:3px;height:3px;border-radius:50%;background:var(--mist)}
 .kpi-foot b{color:var(--granite);font-weight:700}
@@ -441,16 +456,10 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 <!-- ================= HERO ================= -->
 <header class="hero" id="top">
   <div class="hero-mtns" aria-hidden="true">
-    <svg viewBox="0 0 1440 340" preserveAspectRatio="xMidYMax slice">
-      <defs>
-        <linearGradient id="mtnBack" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#3A5B82" stop-opacity=".30"/>
-          <stop offset="1" stop-color="#1E2E3F" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <path class="mtn-back" d="M0 170 L90 130 L170 165 L280 95 L400 150 L520 110 L640 160 L760 120 L900 158 L1030 108 L1160 150 L1290 118 L1440 148 L1440 340 L0 340 Z"/>
-      <path class="mtn-mid" d="M0 232 L120 186 L250 222 L380 166 L520 216 L660 176 L800 222 L960 170 L1100 216 L1250 182 L1440 210 L1440 340 L0 340 Z"/>
-      <path class="mtn-front" d="M0 300 L160 260 L320 296 L500 254 L680 296 L860 260 L1040 296 L1220 258 L1380 290 L1440 278 L1440 340 L0 340 Z"/>
+    <div class="alpen-sun"></div>
+    <svg viewBox="0 0 1440 260" preserveAspectRatio="none">
+      <path class="ar-back" d="M0 120 L120 88 L260 118 L400 64 L540 108 L680 74 L840 112 L1000 70 L1160 108 L1300 80 L1440 110 L1440 260 L0 260 Z"/>
+      <path class="ar-front" d="M0 175 L160 145 L330 174 L510 134 L690 176 L870 142 L1050 178 L1230 146 L1390 174 L1440 162 L1440 260 L0 260 Z"/>
     </svg>
   </div>
   <div class="hero-grid" aria-hidden="true"></div>
@@ -458,7 +467,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
     <div>
       <span class="evt tick rv">EVT-0001 · MedDev Automation · Launching 2027</span>
       <h1>The QMS that keeps<br><span class="hl">its own evidence.</span></h1>
-      <p class="lede">The quality management system built for medical device manufacturers — end-to-end automation of the work between the work. Every action is an authenticated electronic signature. Every record lives on an append-only audit trail. Every module is connected by design — so audit-ready isn't a scramble, it's the resting state.</p>
+      <p class="lede">The quality management system for medical device manufacturers. Every action is an authenticated e-signature, every record lives on an append-only audit trail, and every module is connected by design — so the evidence is there before anyone asks for it.</p>
       <div class="hero-ctas">
         <a class="btn btn-glow" href="#access">Join the waitlist</a>
         <a class="btn btn-ghost-d" href="#founding">Become a Founding Partner</a>
@@ -470,14 +479,6 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
         <span class="chip" role="listitem">SaMD &amp; Digital Health</span>
         <span class="chip" role="listitem">Combination Products</span>
         <span class="chip" role="listitem">Contract Manufacturers</span>
-      </div>
-      <div class="chips-label" style="margin-top:18px">For every team — the whole platform, or just the modules you need</div>
-      <div class="chips" role="list">
-        <span class="chip" role="listitem">Quality</span>
-        <span class="chip" role="listitem">Regulatory Affairs</span>
-        <span class="chip" role="listitem">Manufacturing &amp; Operations</span>
-        <span class="chip" role="listitem">R&amp;D / Design</span>
-        <span class="chip" role="listitem">Training &amp; HR</span>
       </div>
     </div>
 
@@ -515,7 +516,6 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
       </div>
     </div>
   </div>
-  <svg class="ridge" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0 110 L180 52 L320 84 L520 28 L700 74 L900 20 L1080 66 L1260 38 L1440 78 L1440 110 Z" fill="#EDF0F4"/></svg>
 </header>
 
 <!-- ================= PROBLEM ================= -->
@@ -523,7 +523,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
   <div class="wrap">
     <div class="sec-head rv">
       <span class="evt tick rv">EVT-0002 · The problem of record</span>
-      <h2>Audit prep shouldn't be archaeology.</h2>
+      <h2>Audit prep shouldn't be a last-minute scramble.</h2>
       <p>Most eQMS platforms were assembled by acquisition — modules bolted together, signatures bolted on, evidence reconstructed after the fact. The week before an audit tells you everything about a quality system.</p>
     </div>
     <div class="prob-grid rv stagger">
@@ -687,13 +687,13 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
           <span class="kpi-ttl">On-time training completion</span>
           <span class="kpi-live"><span class="lvd"></span> Live</span>
         </div>
-        <div class="kpi-sub">After each controlled-document release · trailing 4 quarters</div>
+        <div class="kpi-sub">After each controlled-document release · 2026, month to date</div>
         <div class="kpi-readout">
           <span class="kpi-big statnum" data-count="96.5" data-decimals="1" data-suffix="%">0%</span>
           <span class="kpi-trend"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18l7-7 4 4 5-7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8h5v5" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> trending up</span>
         </div>
         <div class="kpi-chart">
-          <svg viewBox="0 0 560 222" role="img" aria-label="On-time training completion percentage rising from 82 to 96.5 percent across the trailing four quarters">
+          <svg viewBox="0 0 560 222" role="img" aria-label="On-time training completion by month in 2026, rising from 79 percent in January to 96.5 percent in June, shown against a 90 percent target line that it crosses after March">
             <defs>
               <linearGradient id="kpiStroke" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0" stop-color="#DD8638"/><stop offset="1" stop-color="#2F8A63"/>
@@ -702,10 +702,9 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
                 <stop offset="0" stop-color="#DD8638" stop-opacity=".22"/><stop offset="1" stop-color="#DD8638" stop-opacity="0"/>
               </linearGradient>
             </defs>
-            <!-- Y axis gridlines + % labels -->
+            <!-- Y axis gridlines + % labels (90% line replaced by target line) -->
             <g class="spark-grid">
               <line x1="58" y1="20" x2="536" y2="20"/>
-              <line x1="58" y1="62.3" x2="536" y2="62.3"/>
               <line x1="58" y1="104.6" x2="536" y2="104.6"/>
               <line x1="58" y1="146.9" x2="536" y2="146.9"/>
               <line x1="58" y1="168" x2="536" y2="168"/>
@@ -716,25 +715,34 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
               <text x="50" y="107.6" text-anchor="end">80%</text>
               <text x="50" y="149.9" text-anchor="end">70%</text>
             </g>
-            <!-- Y axis title -->
             <text class="spark-axt" x="14" y="94" transform="rotate(-90 14 94)" text-anchor="middle">% on time</text>
-            <!-- area + line -->
-            <path class="spark-area" d="M 58.0 168 L 58.0 96.1 L 217.3 70.7 L 376.7 53.8 L 536.0 34.8 L 536.0 168 Z"/>
-            <path class="spark-line" d="M 58.0 96.1 L 217.3 70.7 L 376.7 53.8 L 536.0 34.8"/>
-            <circle class="spark-dot" cx="58" cy="96.1" r="3.6"/>
-            <circle class="spark-dot" cx="217.3" cy="70.7" r="3.6"/>
-            <circle class="spark-dot" cx="376.7" cy="53.8" r="3.6"/>
-            <circle class="spark-dot end" cx="536" cy="34.8" r="5.4"/>
-            <!-- X axis quarter labels (4) -->
+            <!-- 90% TARGET line -->
+            <line class="spark-target" x1="58" y1="62.3" x2="536" y2="62.3"/>
+            <text class="spark-target-lbl" x="63" y="57" text-anchor="start">TARGET 90%</text>
+            <!-- area + actual line (Jan–Jun 2026) -->
+            <path class="spark-area" d="M 58.0 168 L 58.0 108.8 L 153.6 83.4 L 249.2 70.7 L 344.8 53.8 L 440.4 45.4 L 536.0 34.8 L 536.0 168 Z"/>
+            <path class="spark-line" d="M 58.0 108.8 L 153.6 83.4 L 249.2 70.7 L 344.8 53.8 L 440.4 45.4 L 536.0 34.8"/>
+            <circle class="spark-dot under" cx="58" cy="108.8" r="3.6"/>
+            <circle class="spark-dot under" cx="153.6" cy="83.4" r="3.6"/>
+            <circle class="spark-dot under" cx="249.2" cy="70.7" r="3.6"/>
+            <circle class="spark-dot over" cx="344.8" cy="53.8" r="3.6"/>
+            <circle class="spark-dot over" cx="440.4" cy="45.4" r="3.6"/>
+            <circle class="spark-dot end over" cx="536" cy="34.8" r="5.4"/>
+            <!-- X axis month labels (2026 MTD) -->
             <g class="spark-x">
-              <text x="58" y="184" text-anchor="middle">Q3'25</text>
-              <text x="217.3" y="184" text-anchor="middle">Q4'25</text>
-              <text x="376.7" y="184" text-anchor="middle">Q1'26</text>
-              <text x="536" y="184" text-anchor="middle">Q2'26</text>
+              <text x="58" y="184" text-anchor="middle">Jan</text>
+              <text x="153.6" y="184" text-anchor="middle">Feb</text>
+              <text x="249.2" y="184" text-anchor="middle">Mar</text>
+              <text x="344.8" y="184" text-anchor="middle">Apr</text>
+              <text x="440.4" y="184" text-anchor="middle">May</text>
+              <text x="536" y="184" text-anchor="middle">Jun</text>
             </g>
-            <!-- X axis title -->
-            <text class="spark-axt" x="297" y="208" text-anchor="middle">Quarter · trailing 4</text>
+            <text class="spark-axt" x="297" y="208" text-anchor="middle">2026 · month to date</text>
           </svg>
+          <div class="kpi-legend" aria-hidden="true">
+            <span class="kl"><i class="kl-actual"></i>Actual</span>
+            <span class="kl"><i class="kl-target"></i>Target · 90%</span>
+          </div>
         </div>
         <div class="kpi-foot">
           <span>Computed from the audit trail</span><span class="dot-sep"></span>
