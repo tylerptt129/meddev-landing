@@ -339,6 +339,33 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
   .aurora b,.app{animation:none!important}
   .rv,.stagger > *{transition:none}
 }
+
+/* ============ gaps section (compliance-cited) ============ */
+.gaps{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.gap{position:relative;background:var(--surface);border:1px solid var(--hair);border-radius:20px;padding:32px 32px 26px;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease}
+.gap:hover{transform:translateY(-4px);box-shadow:0 30px 60px -38px rgba(20,30,42,.34)}
+.gap::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ga,var(--glow))}
+.gap .g-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ga,var(--glow-hi));font-weight:700;margin-bottom:12px}
+.gap h3{font-family:var(--display);font-weight:700;font-size:21px;line-height:1.22;letter-spacing:-.012em;margin-bottom:14px}
+.gap .g-body{font-size:14.5px;color:var(--granite);line-height:1.62}
+.gap .g-body b{color:var(--ink);font-weight:600}
+/* mechanic step strip */
+.g-steps{display:flex;flex-direction:column;gap:0;margin:20px 0 4px;padding:16px 18px;background:var(--surface-2);border:1px solid var(--hair);border-radius:13px}
+.g-step{display:flex;gap:12px;align-items:flex-start;padding:7px 0;position:relative}
+.g-step .gs-n{flex:none;width:21px;height:21px;border-radius:7px;background:var(--ga,var(--glow));color:#fff;font-family:var(--mono);font-size:11px;font-weight:700;display:grid;place-items:center;margin-top:1px}
+.g-step .gs-t{font-size:13px;color:var(--ink);line-height:1.45}
+.g-step .gs-t b{font-weight:600}
+.g-step:not(:last-child)::after{content:"";position:absolute;left:10px;top:28px;bottom:-1px;width:1.5px;background:linear-gradient(180deg,var(--ga,var(--glow)),transparent)}
+/* compliance linkage tag (auditor traceability look) */
+.g-clause{margin-top:auto;padding-top:18px}
+.g-clause .gc-label{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.g-clause .gc-label::before{content:"";width:13px;height:13px;background:no-repeat center/contain url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="%235C6775" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>')}
+.g-clause .gc-tags{display:flex;flex-wrap:wrap;gap:6px}
+.g-clause .gc{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--dusk-ink);background:var(--dusk-soft);border:1px solid #D3DEEA;border-radius:6px;padding:5px 9px;line-height:1.3}
+.g-clause .gc b{font-weight:700;color:var(--ink)}
+.gap-note{margin-top:22px;font-size:13.5px;color:var(--granite);text-align:center}
+.gap-note b{color:var(--ink);font-weight:600}
+@media (max-width:820px){.gaps{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -496,39 +523,58 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
   </div>
 </section>
 
-<!-- ================= FLOW / HANDOFF ================= -->
-<section id="flow" class="dark">
+<!-- ================= GAPS (compliance-cited) ================= -->
+<section id="flow">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="evt tick rv">EVT-0004 · One connected system</span>
-      <h2>When a document is released, training is created in the same step.</h2>
-      <p>Modules hand off to each other through transactional contracts — one event either completes everywhere or nowhere. No silos, no swivel-chair, no “someone should update the matrix.”</p>
+      <span class="evt tick rv">EVT-0004 · Built into the core</span>
+      <h2>The hard parts, handled by design.</h2>
+      <p>Some things in a quality system are genuinely hard to keep clean. We took the ones teams struggle with most and built the answer into the foundation — so the right thing happens by default, and the record protects itself.</p>
     </div>
-    <div class="flow-board rv stagger">
-      <div class="fnode">
-        <span class="f-ico" style="--c:#F4B26A;--cbg:rgba(221,134,56,.16)"><svg viewBox="0 0 24 24" fill="none"><path d="M4 17c3-6 5-9 7-9s2 5 4 5 3-3 5-3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-        <div class="f-ttl">Document approved</div>
-        <p>The final signature lands on SOP-027 — revision 6 becomes effective.</p>
+    <div class="gaps rv stagger">
+
+      <!-- GAP 1 -->
+      <div class="gap" style="--ga:var(--glow-hi)">
+        <div class="g-k">Gap 01 · Training &amp; document control</div>
+        <h3>When a document changes, the right people get retrained — and the rigor matches the risk.</h3>
+        <p class="g-body">A controlled document gets revised. The standard doesn't just ask that affected people be retrained — it asks that the <b>effectiveness</b> of that training be evaluated, with a method <b>proportionate to the risk</b> of the work. That's where systems fall short: a minor editorial fix triggers the same heavyweight sign-off as a critical process change, so teams either over-burden everyone or quietly skip the effectiveness step.</p>
+        <div class="g-steps">
+          <div class="g-step"><span class="gs-n">1</span><span class="gs-t">A controlled document is revised and moves toward release.</span></div>
+          <div class="g-step"><span class="gs-n">2</span><span class="gs-t">A trainer <b>right-sizes the effectiveness method to the risk</b> — read-and-acknowledge for a typo, full assessment or OJT for a process change.</span></div>
+          <div class="g-step"><span class="gs-n">3</span><span class="gs-t">The training event is created in the <b>same transaction as the release</b> — it can't be released-but-forgotten.</span></div>
+        </div>
+        <div class="g-clause">
+          <div class="gc-label">Fulfills, in full</div>
+          <div class="gc-tags">
+            <span class="gc"><b>ISO 13485:2016 §6.2</b> Human resources</span>
+            <span class="gc"><b>§4.2.4</b> Control of documents</span>
+            <span class="gc">FDA QMSR · <b>21 CFR Part 820</b> (by reference)</span>
+            <span class="gc">basis for <b>EU MDR</b> &amp; <b>MDSAP</b></span>
+          </div>
+        </div>
       </div>
-      <div class="flow-arrow" aria-hidden="true">
-        <span class="pipe">SAME TRANSACTION</span>
-        <svg viewBox="0 0 42 16" fill="none"><path d="M0 8h36m0 0l-6-6m6 6l-6 6" stroke="#6FCDA4" stroke-width="2"/></svg>
+
+      <!-- GAP 2 -->
+      <div class="gap" style="--ga:var(--dusk)">
+        <div class="g-k">Gap 02 · Delegated approval authority</div>
+        <h3>Approvals keep moving when an approver is out — without breaking the record.</h3>
+        <p class="g-body">A change request is waiting on an approver who's suddenly on leave. Most systems force you to recall the request, swap the person, and restart every approval — or it stalls. We built delegation in, with guardrails that protect the integrity of the record.</p>
+        <div class="g-steps">
+          <div class="g-step"><span class="gs-n">1</span><span class="gs-t">Before stepping away, an approver <b>assigns a backup for a set time window.</b></span></div>
+          <div class="g-step"><span class="gs-n">2</span><span class="gs-t">If they're out before they could, <b>Document Control on that record</b> can assign it — but only to the <b>same role</b> (a different qualified person) or the <b>management level above</b>. Anything else stalls, and can only return to Draft — by design.</span></div>
+          <div class="g-step"><span class="gs-n">3</span><span class="gs-t">Every delegated approval is captured <b>inside the change request</b> — who approved, on whose behalf, and when.</span></div>
+        </div>
+        <div class="g-clause">
+          <div class="gc-label">Fulfills, in full</div>
+          <div class="gc-tags">
+            <span class="gc"><b>ISO 13485:2016 §4.2.4</b> review &amp; approval by designated personnel</span>
+            <span class="gc"><b>21 CFR Part 11</b> §11.10 · §11.50 · §11.70</span>
+          </div>
+        </div>
       </div>
-      <div class="fnode">
-        <span class="f-ico" style="--c:#6FCDA4;--cbg:rgba(47,138,99,.18)"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v9m0 0l-3.5-3.5M12 13l3.5-3.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 16v3h14v-3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <div class="f-ttl">Training event created</div>
-        <p>The instant the release commits, training exists — it cannot be forgotten.</p>
-      </div>
-      <div class="flow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 42 16" fill="none"><path d="M0 8h36m0 0l-6-6m6 6l-6 6" stroke="#6FCDA4" stroke-width="2"/></svg>
-      </div>
-      <div class="fnode">
-        <span class="f-ico" style="--c:#B9C0F0;--cbg:rgba(110,120,192,.22)"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M7 11v5c0 1.5 2.2 3 5 3s5-1.5 5-3v-5" stroke="currentColor" stroke-width="2"/></svg></span>
-        <div class="f-ttl">Right people, right method</div>
-        <p>A trainer reviews the change, right-sizes the training, and dispatches it.</p>
-      </div>
+
     </div>
-    <p class="flow-note rv"><b>Integrated, not interfaced.</b> If the training event can’t be created, the release doesn’t happen — the system can’t drift into the gap an auditor would find.</p>
+    <p class="gap-note rv"><b>Built in as core, not bolted on.</b> The connection between modules isn't a reminder someone has to honor — it's the architecture.</p>
   </div>
 </section>
 
