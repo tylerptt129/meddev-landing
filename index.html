@@ -282,12 +282,17 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 /* cursor-reactive aurora removed — faint mountain ranges instead */
 /* glowing alpenglow mountains at the hero bottom */
 .hero-mtns{position:absolute;left:0;right:0;bottom:0;height:52%;z-index:1;pointer-events:none;overflow:hidden}
-.alpen-sun{position:absolute;left:50%;bottom:2%;width:1300px;height:440px;transform:translateX(-50%);background:radial-gradient(ellipse 48% 88% at 50% 100%, rgba(236,150,70,.72), rgba(226,138,58,.24) 40%, transparent 70%);filter:blur(5px)}
+.alpen-sun{position:absolute;left:50%;bottom:115px;width:150%;height:300px;transform:translateX(-50%);background:radial-gradient(56% 78% at 50% 100%, rgba(255,194,116,.85), rgba(244,152,68,.32) 46%, transparent 74%);filter:blur(7px)}
 .hero-mtns svg{position:absolute;bottom:0;left:0;width:100%;height:80%;display:block}
 .ar-back{fill:#1B2C3D;opacity:.92}
 .ar-front{fill:#0B1320}
 .hero-in,.hero .ridge{position:relative;z-index:2}
 .hero-grid{z-index:1}
+/* recurring alpenglow on the dark CTA band */
+.cta-mtns{position:absolute;left:0;right:0;bottom:0;height:60%;z-index:0;pointer-events:none;overflow:hidden}
+.cta-mtns .alpen-sun{width:820px;height:250px;bottom:-2%;background:radial-gradient(ellipse 30% 64% at 50% 99%, rgba(255,198,124,.82), rgba(247,154,70,.42) 32%, transparent 62%), radial-gradient(ellipse 56% 90% at 50% 100%, rgba(232,141,61,.4), transparent 70%);filter:blur(3px)}
+.cta-mtns svg{position:absolute;bottom:0;left:0;width:100%;height:74%;display:block}
+.cta-band > div:not(.cta-mtns){position:relative;z-index:1}
 
 /* springy, staggered reveals (upgrades .rv) */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1)}
@@ -408,7 +413,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 .rv.in .spark-line{stroke-dashoffset:0}
 .rv.in .spark-dot{opacity:1;transition-delay:1.5s}
 .rv.in .spark-dot.end{transition-delay:1.9s}
-/* 90% target line + legend */
+/* 92% target line + legend */
 .spark-target{stroke:#6B7785;stroke-width:1.6;stroke-dasharray:5 4;opacity:0;transition:opacity .5s ease .9s}
 .rv.in .spark-target{opacity:.95}
 .spark-target-lbl{font-family:var(--mono);font-size:8px;fill:#5C6775;letter-spacing:.07em;font-weight:700;opacity:0;transition:opacity .5s ease 1s}
@@ -693,7 +698,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
           <span class="kpi-trend"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18l7-7 4 4 5-7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8h5v5" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> trending up</span>
         </div>
         <div class="kpi-chart">
-          <svg viewBox="0 0 560 222" role="img" aria-label="On-time training completion by month in 2026, rising from 79 percent in January to 96.5 percent in June, shown against a 90 percent target line that it crosses after March">
+          <svg viewBox="0 0 560 222" role="img" aria-label="On-time training completion by month in 2026, rising from 79 percent in January to 96.5 percent in June, shown against a 92 percent target line, which it reaches in April">
             <defs>
               <linearGradient id="kpiStroke" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0" stop-color="#DD8638"/><stop offset="1" stop-color="#2F8A63"/>
@@ -716,9 +721,9 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
               <text x="50" y="149.9" text-anchor="end">70%</text>
             </g>
             <text class="spark-axt" x="14" y="94" transform="rotate(-90 14 94)" text-anchor="middle">% on time</text>
-            <!-- 90% TARGET line -->
-            <line class="spark-target" x1="58" y1="62.3" x2="536" y2="62.3"/>
-            <text class="spark-target-lbl" x="63" y="57" text-anchor="start">TARGET 90%</text>
+            <!-- 92% TARGET line -->
+            <line class="spark-target" x1="58" y1="53.8" x2="536" y2="53.8"/>
+            <text class="spark-target-lbl" x="63" y="48" text-anchor="start">TARGET 92%</text>
             <!-- area + actual line (Jan–Jun 2026) -->
             <path class="spark-area" d="M 58.0 168 L 58.0 108.8 L 153.6 83.4 L 249.2 70.7 L 344.8 53.8 L 440.4 45.4 L 536.0 34.8 L 536.0 168 Z"/>
             <path class="spark-line" d="M 58.0 108.8 L 153.6 83.4 L 249.2 70.7 L 344.8 53.8 L 440.4 45.4 L 536.0 34.8"/>
@@ -741,7 +746,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
           </svg>
           <div class="kpi-legend" aria-hidden="true">
             <span class="kl"><i class="kl-actual"></i>Actual</span>
-            <span class="kl"><i class="kl-target"></i>Target · 90%</span>
+            <span class="kl"><i class="kl-target"></i>Target · 92%</span>
           </div>
         </div>
         <div class="kpi-foot">
@@ -875,6 +880,13 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 <section id="access" style="padding-top:0">
   <div class="wrap">
     <div class="cta-band rv">
+      <div class="cta-mtns" aria-hidden="true">
+        <div class="alpen-sun"></div>
+        <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+          <path class="ar-back" d="M0 96 L150 64 L320 92 L500 50 L680 88 L860 56 L1040 92 L1220 58 L1390 88 L1440 78 L1440 200 L0 200 Z"/>
+          <path class="ar-front" d="M0 140 L200 116 L400 142 L620 108 L840 144 L1060 112 L1280 142 L1440 128 L1440 200 L0 200 Z"/>
+        </svg>
+      </div>
       <div>
         <span class="evt tick rv">EVT-0009 · The waitlist is open</span>
         <h2>Be in the room when it opens.</h2>
@@ -946,18 +958,33 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
   }
 
   // scroll reveals (springy), staggered grids, EVT ticks, count-ups, seal
+  function reveal(el){
+    if(el.classList.contains('in')) return;
+    el.classList.add('in');
+    if(el.hasAttribute('data-count')) countUp(el);
+    el.querySelectorAll && el.querySelectorAll('[data-count]').forEach(countUp);
+  }
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.classList.add('in');
-        if(e.target.hasAttribute('data-count')) countUp(e.target);
-        e.target.querySelectorAll && e.target.querySelectorAll('[data-count]').forEach(countUp);
-        io.unobserve(e.target);
-      }
+      if(e.isIntersecting){ reveal(e.target); io.unobserve(e.target); }
     });
-  }, {threshold:.14, rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
-  document.querySelectorAll('[data-count]').forEach(function(el){ io.observe(el); });
+  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  var vh = function(){ return window.innerHeight || document.documentElement.clientHeight; };
+  function track(el){
+    // already in/above the viewport on load (e.g. anchor jump or restored scroll): reveal immediately
+    if(el.getBoundingClientRect().top < vh()*0.98){ reveal(el); }
+    else { io.observe(el); }
+  }
+  document.querySelectorAll('.rv').forEach(track);
+  document.querySelectorAll('[data-count]').forEach(function(el){ if(!el.classList.contains('rv')) track(el); });
+  // safety net: anything that has entered the viewport must never stay invisible
+  var safety = function(){
+    document.querySelectorAll('.rv:not(.in)').forEach(function(el){
+      if(el.getBoundingClientRect().top < vh()){ reveal(el); }
+    });
+  };
+  window.addEventListener('scroll', safety, {passive:true});
+  setTimeout(safety, 2600);
 
   // hero audit trail: entries write themselves in, then the seal stamps
   var seal = document.querySelector('#trail .j-seal');
