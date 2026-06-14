@@ -64,8 +64,7 @@ img{max-width:100%}
 
 /* ============ hero ============ */
 .hero{position:relative;background:
-  radial-gradient(1200px 520px at 78% -8%, rgba(221,134,56,.16), transparent 60%),
-  radial-gradient(900px 480px at 12% 8%, rgba(58,91,130,.32), transparent 60%),
+  radial-gradient(1100px 440px at 50% -12%, rgba(58,91,130,.20), transparent 62%),
   linear-gradient(180deg,var(--side1) 0%,var(--side2) 58%,var(--side3) 100%);
   color:#fff;overflow:hidden}
 .ridge{position:absolute;left:0;right:0;bottom:-2px;pointer-events:none}
@@ -278,15 +277,14 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 /* ============================================================
    v2 — 2026 motion & depth layer (additive, on-brand)
    ============================================================ */
-/* cursor-reactive aurora in the hero */
-.aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.aurora b{position:absolute;border-radius:50%;filter:blur(64px);opacity:.34;mix-blend-mode:screen;will-change:transform}
-.aurora .a1{width:360px;height:360px;background:radial-gradient(circle,#DD8638,transparent 66%);left:calc(var(--mx,72%) - 180px);top:calc(var(--my,8%) - 130px);transition:left .35s cubic-bezier(.2,.7,.2,1),top .35s cubic-bezier(.2,.7,.2,1)}
-.aurora .a2{width:640px;height:640px;background:radial-gradient(circle,#3A5B82,transparent 60%);right:-160px;top:36%;opacity:.55;animation:drift 18s ease-in-out infinite alternate}
-.aurora .a3{width:420px;height:420px;background:radial-gradient(circle,#2E8C97,transparent 60%);left:-120px;bottom:-120px;opacity:.4;animation:drift2 22s ease-in-out infinite alternate}
-@keyframes drift{to{transform:translate(-60px,40px) scale(1.08)}}
-@keyframes drift2{to{transform:translate(50px,-30px) scale(1.12)}}
+/* cursor-reactive aurora removed — faint mountain ranges instead */
+.hero-mtns{position:absolute;left:0;right:0;bottom:0;height:64%;z-index:1;pointer-events:none}
+.hero-mtns svg{width:100%;height:100%;display:block}
+.mtn-back{fill:url(#mtnBack)}
+.mtn-mid{fill:#1B2C3E;opacity:.55}
+.mtn-front{fill:#101C28;opacity:.85}
 .hero-in,.hero .ridge{position:relative;z-index:2}
+.hero .ridge{z-index:3}
 .hero-grid{z-index:1}
 
 /* springy, staggered reveals (upgrades .rv) */
@@ -443,7 +441,19 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 
 <!-- ================= HERO ================= -->
 <header class="hero" id="top">
-  <div class="aurora" aria-hidden="true"><b class="a1"></b><b class="a2"></b><b class="a3"></b></div>
+  <div class="hero-mtns" aria-hidden="true">
+    <svg viewBox="0 0 1440 340" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="mtnBack" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3A5B82" stop-opacity=".30"/>
+          <stop offset="1" stop-color="#1E2E3F" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="mtn-back" d="M0 170 L90 130 L170 165 L280 95 L400 150 L520 110 L640 160 L760 120 L900 158 L1030 108 L1160 150 L1290 118 L1440 148 L1440 340 L0 340 Z"/>
+      <path class="mtn-mid" d="M0 232 L120 186 L250 222 L380 166 L520 216 L660 176 L800 222 L960 170 L1100 216 L1250 182 L1440 210 L1440 340 L0 340 Z"/>
+      <path class="mtn-front" d="M0 300 L160 260 L320 296 L500 254 L680 296 L860 260 L1040 296 L1220 258 L1380 290 L1440 278 L1440 340 L0 340 Z"/>
+    </svg>
+  </div>
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap hero-in">
     <div>
@@ -909,20 +919,6 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
     if(bar) bar.style.width = (p*100).toFixed(2) + '%';
   }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-
-  // cursor-reactive aurora (hero) — gentle parallax of the warm glow
-  if(!reduce){
-    var hero = document.querySelector('.hero');
-    if(hero){
-      hero.addEventListener('pointermove', function(e){
-        var r = hero.getBoundingClientRect();
-        var mx = ((e.clientX - r.left)/r.width*100);
-        var my = ((e.clientY - r.top)/r.height*100);
-        hero.style.setProperty('--mx', mx.toFixed(1)+'%');
-        hero.style.setProperty('--my', my.toFixed(1)+'%');
-      }, {passive:true});
-    }
-  }
 
   // count-up for stat numerals (data-count="13")
   function countUp(el){
