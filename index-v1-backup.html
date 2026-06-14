@@ -55,7 +55,7 @@ img{max-width:100%}
 .nav-links a:hover{color:#fff}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;white-space:nowrap;font-family:var(--body);font-weight:600;font-size:14.5px;border-radius:10px;padding:13px 24px;cursor:pointer;border:0;transition:transform .15s ease, box-shadow .2s ease, background .2s ease}
 .btn:active{transform:translateY(1px)}
-.btn-glow{background:linear-gradient(180deg,#E59048,var(--glow));color:#fff!important;box-shadow:0 8px 24px -10px rgba(221,134,56,.55), inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-glow{background:linear-gradient(180deg,#E59048,var(--glow));color:#fff;box-shadow:0 8px 24px -10px rgba(221,134,56,.55), inset 0 1px 0 rgba(255,255,255,.25)}
 .btn-glow:hover{box-shadow:0 12px 30px -10px rgba(221,134,56,.7)}
 .btn-ghost-d{background:rgba(255,255,255,.06);color:#E8EEF4;border:1px solid rgba(255,255,255,.14)}
 .btn-ghost-d:hover{background:rgba(255,255,255,.11)}
@@ -63,7 +63,8 @@ img{max-width:100%}
 
 /* ============ hero ============ */
 .hero{position:relative;background:
-  radial-gradient(1100px 440px at 50% -12%, rgba(58,91,130,.20), transparent 62%),
+  radial-gradient(1200px 520px at 78% -8%, rgba(221,134,56,.16), transparent 60%),
+  radial-gradient(900px 480px at 12% 8%, rgba(58,91,130,.32), transparent 60%),
   linear-gradient(180deg,var(--side1) 0%,var(--side2) 58%,var(--side3) 100%);
   color:#fff;overflow:hidden}
 .ridge{position:absolute;left:0;right:0;bottom:-2px;pointer-events:none}
@@ -78,7 +79,7 @@ img{max-width:100%}
 .chips-label{font-size:11px;color:#B7C4D1;margin-top:30px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
 
 /* ============ faux app (signature element) ============ */
-.app{border-radius:18px;background:#101A24;border:1px solid rgba(255,255,255,.09);box-shadow:0 40px 90px -34px rgba(0,0,0,.6), 0 0 0 1px rgba(0,0,0,.25);overflow:hidden;font-size:13px;transform:perspective(1600px) rotateY(-3deg) rotateX(1deg);transition:transform .6s ease;max-width:560px;justify-self:end}
+.app{border-radius:18px;background:#101A24;border:1px solid rgba(255,255,255,.09);box-shadow:0 40px 90px -30px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.3), 0 0 80px -20px rgba(221,134,56,.12);overflow:hidden;font-size:13px;transform:perspective(1600px) rotateY(-3deg) rotateX(1deg);transition:transform .6s ease;max-width:560px;justify-self:end}
 .app:hover{transform:perspective(1600px) rotateY(-1.5deg) rotateX(.5deg)}
 
 .app-side{background:linear-gradient(180deg,#1E2E3F,#141F2B);padding:13px 9px;border-right:1px solid rgba(255,255,255,.05)}
@@ -272,149 +273,9 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
   .logo small{display:none}
   .founder blockquote{font-size:17.5px}
 }
-
-/* ============================================================
-   v2 — 2026 motion & depth layer (additive, on-brand)
-   ============================================================ */
-/* cursor-reactive aurora removed — faint mountain ranges instead */
-.hero-mtns{position:absolute;left:0;right:0;bottom:0;height:64%;z-index:1;pointer-events:none}
-.hero-mtns svg{width:100%;height:100%;display:block}
-.mtn-back{fill:url(#mtnBack)}
-.mtn-mid{fill:#1B2C3E;opacity:.55}
-.mtn-front{fill:#101C28;opacity:.85}
-.hero-in,.hero .ridge{position:relative;z-index:2}
-.hero .ridge{z-index:3}
-.hero-grid{z-index:1}
-
-/* springy, staggered reveals (upgrades .rv) */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1)}
-.rv.in{opacity:1;transform:none}
-.stagger > *{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s cubic-bezier(.16,1,.3,1)}
-.stagger.in > *{opacity:1;transform:none}
-.stagger.in > *:nth-child(1){transition-delay:.02s}
-.stagger.in > *:nth-child(2){transition-delay:.09s}
-.stagger.in > *:nth-child(3){transition-delay:.16s}
-.stagger.in > *:nth-child(4){transition-delay:.23s}
-.stagger.in > *:nth-child(5){transition-delay:.30s}
-.stagger.in > *:nth-child(6){transition-delay:.37s}
-
-/* EVT chips read like a live log — subtle type-in underline */
-.evt{position:relative}
-.evt.tick::after{content:"";position:absolute;left:0;bottom:-5px;height:1px;width:0;background:linear-gradient(90deg,var(--glow),transparent);transition:width .9s ease .2s}
-.evt.tick.in::after{width:100%}
-
-/* magnetic / shimmer primary button */
-.btn-glow{position:relative;overflow:hidden}
-.btn-glow::after{content:"";position:absolute;top:0;left:-130%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .7s ease}
-.btn-glow:hover::after{left:140%}
-
-/* signature stamp on the hero audit card */
-.j-seal{position:relative}
-.j-seal svg circle, .j-seal svg path{stroke-dasharray:64;stroke-dashoffset:64;transition:stroke-dashoffset .8s ease}
-.j-seal.sealed svg circle{stroke-dashoffset:0}
-.j-seal.sealed svg path{stroke-dashoffset:0;transition-delay:.5s}
-.j-seal.sealed{animation:sealpop .6s cubic-bezier(.2,1.3,.4,1) .3s both}
-@keyframes sealpop{0%{transform:scale(.98)}40%{transform:scale(1.02)}100%{transform:scale(1)}}
-
-/* module cards: depth, gradient hairline on hover, status reveal */
-.mod-card{position:relative;transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease, border-color .3s ease}
-.mod-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(221,134,56,.5),rgba(58,91,130,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s ease;pointer-events:none}
-.mod-card:hover{transform:translateY(-4px);box-shadow:0 24px 44px -28px rgba(20,30,42,.34)}
-.mod-card:hover::before{opacity:1}
-
-/* faux-app: subtle float + glow breathing */
-.app{animation:floaty 7s ease-in-out infinite}
-@keyframes floaty{50%{transform:perspective(1600px) rotateY(-2.4deg) rotateX(.6deg) translateY(-8px)}}
-
-/* count-up numerals use tabular figures */
-.statnum{font-variant-numeric:tabular-nums}
-
-/* scroll progress + section cue rail */
-.scrollbar{position:fixed;top:0;left:0;height:3px;width:0;z-index:70;background:linear-gradient(90deg,#E59048,var(--glow),#3A5B82);box-shadow:0 0 12px rgba(221,134,56,.5);transition:width .1s linear}
-
-@media (prefers-reduced-motion: reduce){
-  .aurora b,.app{animation:none!important}
-  .rv,.stagger > *{transition:none}
-}
-
-/* ============ gaps section (compliance-cited) ============ */
-.gaps{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.gap{position:relative;background:var(--surface);border:1px solid var(--hair);border-radius:20px;padding:32px 32px 26px;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease}
-.gap:hover{transform:translateY(-4px);box-shadow:0 30px 60px -38px rgba(20,30,42,.34)}
-.gap::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ga,var(--glow))}
-.gap .g-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ga,var(--glow-hi));font-weight:700;margin-bottom:12px}
-.gap h3{font-family:var(--display);font-weight:700;font-size:21px;line-height:1.22;letter-spacing:-.012em;margin-bottom:14px}
-.gap .g-body{font-size:14.5px;color:var(--granite);line-height:1.62}
-.gap .g-body b{color:var(--ink);font-weight:600}
-/* mechanic step strip */
-.g-steps{display:flex;flex-direction:column;gap:0;margin:20px 0 4px;padding:16px 18px;background:var(--surface-2);border:1px solid var(--hair);border-radius:13px}
-.g-step{display:flex;gap:12px;align-items:flex-start;padding:7px 0;position:relative}
-.g-step .gs-n{flex:none;width:21px;height:21px;border-radius:7px;background:var(--ga,var(--glow));color:#fff;font-family:var(--mono);font-size:11px;font-weight:700;display:grid;place-items:center;margin-top:1px}
-.g-step .gs-t{font-size:13px;color:var(--ink);line-height:1.45}
-.g-step .gs-t b{font-weight:600}
-.g-step:not(:last-child)::after{content:"";position:absolute;left:10px;top:28px;bottom:-1px;width:1.5px;background:linear-gradient(180deg,var(--ga,var(--glow)),transparent)}
-/* compliance linkage tag (auditor traceability look) */
-.g-clause{margin-top:auto;padding-top:18px}
-.g-clause .gc-label{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:7px;margin-bottom:8px}
-.g-clause .gc-label::before{content:"";width:13px;height:13px;background:no-repeat center/contain url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="%235C6775" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>')}
-.g-clause .gc-tags{display:flex;flex-wrap:wrap;gap:6px}
-.g-clause .gc{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--dusk-ink);background:var(--dusk-soft);border:1px solid #D3DEEA;border-radius:6px;padding:5px 9px;line-height:1.3}
-.g-clause .gc b{font-weight:700;color:var(--ink)}
-.gap-note{margin-top:22px;font-size:13.5px;color:var(--granite);text-align:center}
-.gap-note b{color:var(--ink);font-weight:600}
-@media (max-width:820px){.gaps{grid-template-columns:1fr}}
-/* three gaps across */
-.gaps.three{grid-template-columns:repeat(3,1fr)}
-.gaps.three .gap{padding:28px 26px 24px}
-.gaps.three .gap h3{font-size:18.5px}
-.gaps.three .gap .g-body{font-size:13.5px}
-@media (max-width:1000px){.gaps.three{grid-template-columns:1fr}}
-
-/* ============ KPI section ============ */
-.kpi-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:center}
-.kpi-points{display:flex;flex-direction:column;gap:18px}
-.kpi-pt{display:flex;gap:13px;align-items:flex-start}
-.kpi-pt .kp-ic{flex:none;width:34px;height:34px;border-radius:10px;background:var(--glow-soft);display:grid;place-items:center;margin-top:1px}
-.kpi-pt .kp-ic svg{width:18px;height:18px}
-.kpi-pt b{font-size:15px;font-weight:600;display:block;margin-bottom:2px}
-.kpi-pt span{font-size:13.5px;color:var(--granite);line-height:1.5}
-/* the card */
-.kpi-card{background:var(--surface);border:1px solid var(--hair);border-radius:20px;padding:26px 28px 22px;box-shadow:0 34px 70px -40px rgba(20,30,42,.34);position:relative;overflow:hidden}
-.kpi-card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(221,134,56,.4),rgba(47,138,99,.3));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.6;pointer-events:none}
-.kpi-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:4px}
-.kpi-ttl{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink)}
-.kpi-live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--pine);background:var(--pine-soft);border:1px solid #BEE0CF;border-radius:999px;padding:4px 10px}
-.kpi-live .lvd{width:6px;height:6px;border-radius:50%;background:var(--pine);box-shadow:0 0 0 3px rgba(47,138,99,.18);animation:pulse 2.2s ease infinite}
-.kpi-sub{font-size:12.5px;color:var(--granite);margin-bottom:14px}
-.kpi-readout{display:flex;align-items:flex-end;gap:14px;margin-bottom:6px}
-.kpi-big{font-family:var(--display);font-weight:800;font-size:54px;letter-spacing:-.03em;line-height:.9;color:var(--ink)}
-.kpi-trend{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:var(--pine);background:var(--pine-soft);border-radius:8px;padding:5px 10px;margin-bottom:7px}
-.kpi-trend svg{width:13px;height:13px}
-/* chart */
-.kpi-chart{margin:6px -6px -2px}
-.kpi-chart svg{width:100%;height:auto;display:block;overflow:visible}
-.spark-grid line{stroke:var(--hair);stroke-width:1}
-.spark-area{fill:url(#kpiFill);opacity:0;transition:opacity 1.3s ease .5s}
-.spark-line{fill:none;stroke:url(#kpiStroke);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:500;stroke-dashoffset:500;transition:stroke-dashoffset 1.9s cubic-bezier(.3,.7,.3,1)}
-.spark-dot{fill:#fff;stroke:var(--glow-hi);stroke-width:2.4;opacity:0;transition:opacity .4s ease}
-.spark-dot.end{stroke:var(--pine)}
-.spark-x{font-family:var(--mono);font-size:8.5px;fill:var(--mist);letter-spacing:.02em}
-.spark-y{font-family:var(--mono);font-size:8.5px;fill:var(--mist)}
-.spark-axt{font-family:var(--mono);font-size:8.5px;fill:var(--granite);letter-spacing:.08em;text-transform:uppercase;font-weight:700}
-.rv.in .spark-area{opacity:1}
-.rv.in .spark-line{stroke-dashoffset:0}
-.rv.in .spark-dot{opacity:1;transition-delay:1.5s}
-.rv.in .spark-dot.end{transition-delay:1.9s}
-.kpi-foot{display:flex;align-items:center;gap:9px;margin-top:12px;padding-top:13px;border-top:1px solid var(--hair);font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--mist);flex-wrap:wrap}
-.kpi-foot .dot-sep{width:3px;height:3px;border-radius:50%;background:var(--mist)}
-.kpi-foot b{color:var(--granite);font-weight:700}
-.kpi-bridge{margin-top:26px;text-align:center;font-size:13.5px;color:var(--granite)}
-.kpi-bridge b{color:var(--ink);font-weight:600}
-@media (max-width:860px){.kpi-grid{grid-template-columns:1fr;gap:26px}.kpi-big{font-size:46px}}
 </style>
 </head>
 <body>
-<div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
 
 <!-- ================= NAV ================= -->
 <nav class="nav" id="nav" aria-label="Main">
@@ -440,23 +301,10 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 
 <!-- ================= HERO ================= -->
 <header class="hero" id="top">
-  <div class="hero-mtns" aria-hidden="true">
-    <svg viewBox="0 0 1440 340" preserveAspectRatio="xMidYMax slice">
-      <defs>
-        <linearGradient id="mtnBack" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#3A5B82" stop-opacity=".30"/>
-          <stop offset="1" stop-color="#1E2E3F" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <path class="mtn-back" d="M0 170 L90 130 L170 165 L280 95 L400 150 L520 110 L640 160 L760 120 L900 158 L1030 108 L1160 150 L1290 118 L1440 148 L1440 340 L0 340 Z"/>
-      <path class="mtn-mid" d="M0 232 L120 186 L250 222 L380 166 L520 216 L660 176 L800 222 L960 170 L1100 216 L1250 182 L1440 210 L1440 340 L0 340 Z"/>
-      <path class="mtn-front" d="M0 300 L160 260 L320 296 L500 254 L680 296 L860 260 L1040 296 L1220 258 L1380 290 L1440 278 L1440 340 L0 340 Z"/>
-    </svg>
-  </div>
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap hero-in">
     <div>
-      <span class="evt tick rv">EVT-0001 · MedDev Automation · Launching 2027</span>
+      <span class="evt">EVT-0001 · MedDev Automation · Launching 2027</span>
       <h1>The QMS that keeps<br><span class="hl">its own evidence.</span></h1>
       <p class="lede">The quality management system built for medical device manufacturers — end-to-end automation of the work between the work. Every action is an authenticated electronic signature. Every record lives on an append-only audit trail. Every module is connected by design — so audit-ready isn't a scramble, it's the resting state.</p>
       <div class="hero-ctas">
@@ -522,11 +370,11 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 <section id="why" class="problem">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="evt tick rv">EVT-0002 · The problem of record</span>
+      <span class="evt">EVT-0002 · The problem of record</span>
       <h2>Audit prep shouldn't be archaeology.</h2>
       <p>Most eQMS platforms were assembled by acquisition — modules bolted together, signatures bolted on, evidence reconstructed after the fact. The week before an audit tells you everything about a quality system.</p>
     </div>
-    <div class="prob-grid rv stagger">
+    <div class="prob-grid rv">
       <div class="prob">
         <span class="tag">THE OLD WAY</span>
         <div class="q">Disconnected modules, manual handoffs</div>
@@ -553,7 +401,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 <section id="platform">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="evt tick rv">EVT-0003 · Designed differently</span>
+      <span class="evt">EVT-0003 · Designed differently</span>
       <h2>Compliance by construction, not by configuration.</h2>
       <p>Three decisions sit underneath every module — made once, inherited everywhere.</p>
     </div>
@@ -580,170 +428,39 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
   </div>
 </section>
 
-<!-- ================= GAPS (compliance-cited) ================= -->
-<section id="flow">
+<!-- ================= FLOW / HANDOFF ================= -->
+<section id="flow" class="dark">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="evt tick rv">EVT-0004 · Built into the core</span>
-      <h2>The hard parts, handled by design.</h2>
-      <p>Some things in a quality system are genuinely hard to keep clean. We took the ones teams struggle with most and built the answer into the foundation — so the right thing happens by default, and the record protects itself.</p>
+      <span class="evt">EVT-0004 · One connected system</span>
+      <h2>When a document is released, training is created in the same step.</h2>
+      <p>Modules hand off to each other through transactional contracts — one event either completes everywhere or nowhere. No silos, no swivel-chair, no “someone should update the matrix.”</p>
     </div>
-    <div class="gaps three rv stagger">
-
-      <!-- GAP 1 -->
-      <div class="gap" style="--ga:var(--glow-hi)">
-        <div class="g-k">Gap 01 · Training &amp; document control</div>
-        <h3>When a document changes, the right people get retrained — and the rigor matches the risk.</h3>
-        <p class="g-body">A controlled document gets revised. The standard doesn't just ask that affected people be retrained — it asks that the <b>effectiveness</b> of that training be evaluated, with a method <b>proportionate to the risk</b> of the work. That's where systems fall short: a minor editorial fix triggers the same heavyweight sign-off as a critical process change, so teams either over-burden everyone or quietly skip the effectiveness step.</p>
-        <div class="g-steps">
-          <div class="g-step"><span class="gs-n">1</span><span class="gs-t">A controlled document is revised and moves toward release.</span></div>
-          <div class="g-step"><span class="gs-n">2</span><span class="gs-t">A trainer <b>right-sizes the effectiveness method to the risk</b> — read-and-acknowledge for a typo, full assessment or OJT for a process change.</span></div>
-          <div class="g-step"><span class="gs-n">3</span><span class="gs-t">The training event is created in the <b>same transaction as the release</b> — it can't be released-but-forgotten.</span></div>
-        </div>
-        <div class="g-clause">
-          <div class="gc-label">Addresses gaps commonly found in</div>
-          <div class="gc-tags">
-            <span class="gc"><b>ISO 13485</b></span>
-            <span class="gc"><b>FDA QMSR</b> (21 CFR Part 820)</span>
-            <span class="gc"><b>EU MDR</b></span>
-            <span class="gc"><b>MDSAP</b></span>
-          </div>
-        </div>
+    <div class="flow-board rv">
+      <div class="fnode">
+        <span class="f-ico" style="--c:#F4B26A;--cbg:rgba(221,134,56,.16)"><svg viewBox="0 0 24 24" fill="none"><path d="M4 17c3-6 5-9 7-9s2 5 4 5 3-3 5-3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        <div class="f-ttl">Document approved</div>
+        <p>The final signature lands on SOP-027 — revision 6 becomes effective.</p>
       </div>
-
-      <!-- GAP 2 -->
-      <div class="gap" style="--ga:var(--dusk)">
-        <div class="g-k">Gap 02 · Delegated approval authority</div>
-        <h3>Approvals keep moving when an approver is out — without breaking the record.</h3>
-        <p class="g-body">A change request is waiting on an approver who's suddenly on leave. Most systems force you to recall the request, swap the person, and restart every approval — or it stalls. We built delegation in, with guardrails that protect the integrity of the record.</p>
-        <div class="g-steps">
-          <div class="g-step"><span class="gs-n">1</span><span class="gs-t">Before stepping away, an approver <b>assigns a backup for a set time window.</b></span></div>
-          <div class="g-step"><span class="gs-n">2</span><span class="gs-t">If they're out before they could, <b>Document Control on that record</b> can assign it — but only to the <b>same role</b> (a different qualified person) or the <b>management level above</b>. Anything else stalls, and can only return to Draft — by design.</span></div>
-          <div class="g-step"><span class="gs-n">3</span><span class="gs-t">Every delegated approval is captured <b>inside the change request</b> — who approved, on whose behalf, and when.</span></div>
-        </div>
-        <div class="g-clause">
-          <div class="gc-label">Addresses gaps commonly found in</div>
-          <div class="gc-tags">
-            <span class="gc"><b>ISO 13485</b></span>
-            <span class="gc"><b>21 CFR Part 11</b></span>
-          </div>
-        </div>
+      <div class="flow-arrow" aria-hidden="true">
+        <span class="pipe">SAME TRANSACTION</span>
+        <svg viewBox="0 0 42 16" fill="none"><path d="M0 8h36m0 0l-6-6m6 6l-6 6" stroke="#6FCDA4" stroke-width="2"/></svg>
       </div>
-
-      <!-- GAP 3 -->
-      <div class="gap" style="--ga:var(--pine)">
-        <div class="g-k">Gap 03 · CAPA effectiveness</div>
-        <h3>A corrective action isn't closed when it's done — it's closed when it's proven to work.</h3>
-        <p class="g-body">CAPA is one of the most-cited problem areas in the industry, and the failure is consistent: systems let a CAPA <b>close on implementation</b> — the action was taken, the box was checked. But the standard expects evidence that the action actually <b>worked</b> and the problem didn't come back. That verification step is where teams fall short.</p>
-        <div class="g-steps">
-          <div class="g-step"><span class="gs-n">1</span><span class="gs-t">The corrective action is implemented — but the CAPA <b>can't reach Closed yet.</b></span></div>
-          <div class="g-step"><span class="gs-n">2</span><span class="gs-t">An effectiveness check is required first: a <b>defined method, a measurement window, and objective evidence</b> that the action held.</span></div>
-          <div class="g-step"><span class="gs-n">3</span><span class="gs-t">Only when effectiveness is verified — recurrence didn't happen — can the CAPA <b>close, with the proof attached.</b></span></div>
-        </div>
-        <div class="g-clause">
-          <div class="gc-label">Addresses gaps commonly found in</div>
-          <div class="gc-tags">
-            <span class="gc"><b>ISO 13485</b></span>
-            <span class="gc"><b>FDA QMSR</b> (21 CFR Part 820)</span>
-          </div>
-        </div>
+      <div class="fnode">
+        <span class="f-ico" style="--c:#6FCDA4;--cbg:rgba(47,138,99,.18)"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v9m0 0l-3.5-3.5M12 13l3.5-3.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 16v3h14v-3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="f-ttl">Training event created</div>
+        <p>The instant the release commits, training exists — it cannot be forgotten.</p>
       </div>
-
-    </div>
-    <p class="gap-note rv"><b>Built in as core, not bolted on.</b> The connection between modules isn't a reminder someone has to honor — it's the architecture.</p>
-  </div>
-</section>
-
-<!-- ================= KPI ================= -->
-<section id="kpi" class="problem">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="evt tick rv">EVT-0005 · Metrics you can trust</span>
-      <h2>KPIs that are built in — and built right.</h2>
-      <p>Most teams build their own metrics in spreadsheets and quietly wonder whether the numbers are right. MedDev Automation computes them from the same record that captures the work — set up correctly from day one, updating in real time, and designed to actually move the process forward.</p>
-    </div>
-    <div class="kpi-grid">
-      <div class="kpi-points rv stagger">
-        <div class="kpi-pt">
-          <span class="kp-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="#C9762C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="8.5" stroke="#C9762C" stroke-width="2.2"/></svg></span>
-          <div><b>Real-time, never stale.</b><span>The number updates the moment the work does — no month-end export, no manual refresh, no wondering how old it is.</span></div>
-        </div>
-        <div class="kpi-pt">
-          <span class="kp-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 13l4 4L20 5" stroke="#C9762C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div><b>Set up correctly, by construction.</b><span>The metric is defined once, in the platform — not re-derived in a spreadsheet each quarter. Everyone sees the same number, computed the same way.</span></div>
-        </div>
-        <div class="kpi-pt">
-          <span class="kp-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 16l3-4 3 2 4-6" stroke="#C9762C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div><b>Built to improve the process.</b><span>It tracks something you can act on — so a dip is a signal to fix, not a number to explain away in the next review.</span></div>
-        </div>
-        <div class="kpi-pt">
-          <span class="kp-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="1.5" stroke="#C9762C" stroke-width="2.2"/><rect x="13" y="4" width="7" height="7" rx="1.5" stroke="#C9762C" stroke-width="2.2"/><rect x="4" y="13" width="7" height="7" rx="1.5" stroke="#C9762C" stroke-width="2.2"/><rect x="13" y="13" width="7" height="7" rx="1.5" stroke="#C9762C" stroke-width="2.2"/></svg></span>
-          <div><b>Templates ready — and views you can shape.</b><span>A library of built-in KPI templates ships with the platform, so you start with the metrics that matter for quality, and see the data you actually want from the first login. Customizable views let you drill into specific areas — Quality Assurance on-time training completion versus Operations, for instance — so each team sees its own slice.</span></div>
-        </div>
+      <div class="flow-arrow" aria-hidden="true">
+        <svg viewBox="0 0 42 16" fill="none"><path d="M0 8h36m0 0l-6-6m6 6l-6 6" stroke="#6FCDA4" stroke-width="2"/></svg>
       </div>
-
-      <div class="kpi-card rv">
-        <div class="kpi-top">
-          <span class="kpi-ttl">On-time training completion</span>
-          <span class="kpi-live"><span class="lvd"></span> Live</span>
-        </div>
-        <div class="kpi-sub">After each controlled-document release · trailing 4 quarters</div>
-        <div class="kpi-readout">
-          <span class="kpi-big statnum" data-count="96.5" data-decimals="1" data-suffix="%">0%</span>
-          <span class="kpi-trend"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18l7-7 4 4 5-7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8h5v5" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> trending up</span>
-        </div>
-        <div class="kpi-chart">
-          <svg viewBox="0 0 560 222" role="img" aria-label="On-time training completion percentage rising from 82 to 96.5 percent across the trailing four quarters">
-            <defs>
-              <linearGradient id="kpiStroke" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#DD8638"/><stop offset="1" stop-color="#2F8A63"/>
-              </linearGradient>
-              <linearGradient id="kpiFill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#DD8638" stop-opacity=".22"/><stop offset="1" stop-color="#DD8638" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <!-- Y axis gridlines + % labels -->
-            <g class="spark-grid">
-              <line x1="58" y1="20" x2="536" y2="20"/>
-              <line x1="58" y1="62.3" x2="536" y2="62.3"/>
-              <line x1="58" y1="104.6" x2="536" y2="104.6"/>
-              <line x1="58" y1="146.9" x2="536" y2="146.9"/>
-              <line x1="58" y1="168" x2="536" y2="168"/>
-            </g>
-            <g class="spark-y">
-              <text x="50" y="23" text-anchor="end">100%</text>
-              <text x="50" y="65.3" text-anchor="end">90%</text>
-              <text x="50" y="107.6" text-anchor="end">80%</text>
-              <text x="50" y="149.9" text-anchor="end">70%</text>
-            </g>
-            <!-- Y axis title -->
-            <text class="spark-axt" x="14" y="94" transform="rotate(-90 14 94)" text-anchor="middle">% on time</text>
-            <!-- area + line -->
-            <path class="spark-area" d="M 58.0 168 L 58.0 96.1 L 217.3 70.7 L 376.7 53.8 L 536.0 34.8 L 536.0 168 Z"/>
-            <path class="spark-line" d="M 58.0 96.1 L 217.3 70.7 L 376.7 53.8 L 536.0 34.8"/>
-            <circle class="spark-dot" cx="58" cy="96.1" r="3.6"/>
-            <circle class="spark-dot" cx="217.3" cy="70.7" r="3.6"/>
-            <circle class="spark-dot" cx="376.7" cy="53.8" r="3.6"/>
-            <circle class="spark-dot end" cx="536" cy="34.8" r="5.4"/>
-            <!-- X axis quarter labels (4) -->
-            <g class="spark-x">
-              <text x="58" y="184" text-anchor="middle">Q3'25</text>
-              <text x="217.3" y="184" text-anchor="middle">Q4'25</text>
-              <text x="376.7" y="184" text-anchor="middle">Q1'26</text>
-              <text x="536" y="184" text-anchor="middle">Q2'26</text>
-            </g>
-            <!-- X axis title -->
-            <text class="spark-axt" x="297" y="208" text-anchor="middle">Quarter · trailing 4</text>
-          </svg>
-        </div>
-        <div class="kpi-foot">
-          <span>Computed from the audit trail</span><span class="dot-sep"></span>
-          <span><b>every release counted</b></span><span class="dot-sep"></span>
-          <span>drill into any point</span>
-        </div>
+      <div class="fnode">
+        <span class="f-ico" style="--c:#B9C0F0;--cbg:rgba(110,120,192,.22)"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M7 11v5c0 1.5 2.2 3 5 3s5-1.5 5-3v-5" stroke="currentColor" stroke-width="2"/></svg></span>
+        <div class="f-ttl">Right people, right method</div>
+        <p>A trainer reviews the change, right-sizes the training, and dispatches it.</p>
       </div>
     </div>
-    <p class="kpi-bridge rv"><b>This is Gap 01, measured.</b> When a document changes, did training actually complete on time? Here's that exact question — answered live, from the record itself.</p>
+    <p class="flow-note rv"><b>Integrated, not interfaced.</b> If the training event can’t be created, the release doesn’t happen — the system can’t drift into the gap an auditor would find.</p>
   </div>
 </section>
 
@@ -751,13 +468,13 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 <section id="modules">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="evt tick rv">EVT-0006 · Scope of the system</span>
+      <span class="evt">EVT-0005 · Scope of the system</span>
       <h2>One platform. The whole quality system — and beyond.</h2>
       <p>Quality is the core, not the boundary. Adopt the full platform or start with the modules your team needs — each one ships when it meets the bar, all on the same signature and audit backbone.</p>
     </div>
     <div class="mod-group rv">
       <div class="mg-label"><span class="st build">In build</span> Under active development</div>
-      <div class="mod-grid rv stagger">
+      <div class="mod-grid">
         <div class="mod-card"><b>Document Control</b><span>Change control that proves itself, end to end</span></div>
         <div class="mod-card"><b>Training</b><span>Trainer-gated and always current with every release</span></div>
         <div class="mod-card"><b>Customer Feedback</b><span>Every signal captured, trended, and acted on</span></div>
@@ -770,7 +487,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
     </div>
     <div class="mod-group rv">
       <div class="mg-label"><span class="st plan">Planned</span> On the committed roadmap</div>
-      <div class="mod-grid rv stagger">
+      <div class="mod-grid">
         <div class="mod-card"><b>Design Controls</b><span>Your DHF builds itself as you design</span></div>
         <div class="mod-card"><b>Risk Management</b><span>ISO 14971 as a living file, not a shelf document</span></div>
         <div class="mod-card"><b>Regulatory Affairs &amp; PMS</b><span>Submissions and surveillance, organized and current</span></div>
@@ -810,13 +527,13 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 <section id="founding" class="fp">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="evt tick rv">EVT-0007 · Founding Partner Program</span>
+      <span class="evt">EVT-0007 · Founding Partner Program</span>
       <h2>Five seats. Built around you.</h2>
       <p>Before the doors open to everyone, a small group of medical device manufacturers will shape what ships — and lock in founding terms that never come back. This isn't early access to unfinished software. It's a seat at the table while the table is still being set.</p>
     </div>
-    <div class="fp-grid rv stagger">
+    <div class="fp-grid">
       <div class="fp-card rv">
-        <div class="fp-seats"><b class="statnum" data-count="5">0</b><span>founding seats &middot; by application</span></div>
+        <div class="fp-seats"><b>5</b><span>founding seats &middot; by application</span></div>
         <ul class="fp-list">
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Founding pricing, locked for life.</b> A fixed fraction of future list price — for as long as you stay.</span></li>
           <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>A direct line to the roadmap.</b> Your modules, your workflows, prioritized — you help decide what gets built next.</span></li>
@@ -843,11 +560,11 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 <section id="resources">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="evt tick rv">EVT-0008 · Resources from the founder</span>
+      <span class="evt">EVT-0008 · Resources from the founder</span>
       <h2>Practical tools, while the platform builds.</h2>
       <p>Field-tested quality resources written by a Certified Lead Auditor — the same thinking going into the platform, available to your team now. More arriving as we go.</p>
     </div>
-    <div class="res-grid rv stagger">
+    <div class="res-grid rv">
       <div class="res-card">
         <div class="res-top"><h3>QMSR Transition Gap-Assessment Toolkit</h3><span class="badge-soon">Coming soon</span></div>
         <p>A practical, section-by-section self-assessment for the move from the QSR to FDA's Quality Management System Regulation — the gaps ISO-certified teams miss, the evidence to pull, and a remediation plan that doubles as your transition record.</p>
@@ -868,7 +585,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
   <div class="wrap">
     <div class="cta-band rv">
       <div>
-        <span class="evt tick rv">EVT-0009 · The waitlist is open</span>
+        <span class="evt">EVT-0006 · The waitlist is open</span>
         <h2>Be in the room when it opens.</h2>
         <p>We're building this right — validated, documented, and audit-ready before it ever reaches a customer, targeting launch in 2027. Waitlist members hear from the founder first, get first access, and shape what ships as design-partner spots open up.</p>
       </div>
@@ -908,63 +625,26 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // nav background on scroll + scroll progress bar
+  // nav background on scroll
   var nav = document.getElementById('nav');
-  var bar = document.getElementById('scrollbar');
-  function onScroll(){
-    nav.classList.toggle('scrolled', window.scrollY > 24);
-    var h = document.documentElement;
-    var p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
-    if(bar) bar.style.width = (p*100).toFixed(2) + '%';
-  }
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 24); }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
-  // count-up for stat numerals (data-count="13")
-  function countUp(el){
-    var target = parseFloat(el.getAttribute('data-count'));
-    var suffix = el.getAttribute('data-suffix') || '';
-    var dec = parseInt(el.getAttribute('data-decimals'),10) || 0;
-    var fmt = function(v){ return dec ? v.toFixed(dec) : Math.round(v); };
-    if(reduce){ el.textContent = fmt(target) + suffix; return; }
-    var dur = 1400, start = null;
-    function step(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts-start)/dur, 1);
-      var eased = 1 - Math.pow(1-p, 3);
-      el.textContent = fmt(target*eased) + suffix;
-      if(p<1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  // scroll reveals (springy), staggered grids, EVT ticks, count-ups, seal
+  // scroll reveals
   var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.classList.add('in');
-        if(e.target.hasAttribute('data-count')) countUp(e.target);
-        e.target.querySelectorAll && e.target.querySelectorAll('[data-count]').forEach(countUp);
-        io.unobserve(e.target);
-      }
-    });
-  }, {threshold:.14, rootMargin:'0px 0px -8% 0px'});
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.14});
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
-  document.querySelectorAll('[data-count]').forEach(function(el){ io.observe(el); });
 
-  // hero audit trail: entries write themselves in, then the seal stamps
-  var seal = document.querySelector('#trail .j-seal');
+  // hero audit trail: entries write themselves in (loops gently)
   var rows = Array.prototype.slice.call(document.querySelectorAll('#trail .t-row'));
   function playTrail(){
-    if(seal) seal.classList.remove('sealed');
     rows.forEach(function(r){ r.classList.remove('in'); });
     rows.forEach(function(r){
-      setTimeout(function(){
-        r.classList.add('in');
-        if(seal && r.classList.contains('j-seal')) seal.classList.add('sealed');
-      }, parseInt(r.getAttribute('data-d'),10));
+      setTimeout(function(){ r.classList.add('in'); }, parseInt(r.getAttribute('data-d'),10));
     });
   }
-  if(reduce){ rows.forEach(function(r){ r.classList.add('in'); }); if(seal) seal.classList.add('sealed'); }
+  if(reduce){ rows.forEach(function(r){ r.classList.add('in'); }); }
   else { playTrail(); setInterval(playTrail, 12000); }
 })();
 </script>
