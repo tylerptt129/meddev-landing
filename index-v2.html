@@ -398,10 +398,12 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
 .kpi-chart svg{width:100%;height:auto;display:block;overflow:visible}
 .spark-grid line{stroke:var(--hair);stroke-width:1}
 .spark-area{fill:url(#kpiFill);opacity:0;transition:opacity 1.3s ease .5s}
-.spark-line{fill:none;stroke:url(#kpiStroke);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:490;stroke-dashoffset:490;transition:stroke-dashoffset 1.9s cubic-bezier(.3,.7,.3,1)}
+.spark-line{fill:none;stroke:url(#kpiStroke);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:500;stroke-dashoffset:500;transition:stroke-dashoffset 1.9s cubic-bezier(.3,.7,.3,1)}
 .spark-dot{fill:#fff;stroke:var(--glow-hi);stroke-width:2.4;opacity:0;transition:opacity .4s ease}
 .spark-dot.end{stroke:var(--pine)}
-.spark-x{font-family:var(--mono);font-size:9px;fill:var(--mist);letter-spacing:.04em}
+.spark-x{font-family:var(--mono);font-size:8.5px;fill:var(--mist);letter-spacing:.02em}
+.spark-y{font-family:var(--mono);font-size:8.5px;fill:var(--mist)}
+.spark-axt{font-family:var(--mono);font-size:8.5px;fill:var(--granite);letter-spacing:.08em;text-transform:uppercase;font-weight:700}
 .rv.in .spark-area{opacity:1}
 .rv.in .spark-line{stroke-dashoffset:0}
 .rv.in .spark-dot{opacity:1;transition-delay:1.5s}
@@ -665,6 +667,10 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
           <span class="kp-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 16l3-4 3 2 4-6" stroke="#C9762C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <div><b>Built to improve the process.</b><span>It tracks something you can act on — so a dip is a signal to fix, not a number to explain away in the next review.</span></div>
         </div>
+        <div class="kpi-pt">
+          <span class="kp-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="1.5" stroke="#C9762C" stroke-width="2.2"/><rect x="13" y="4" width="7" height="7" rx="1.5" stroke="#C9762C" stroke-width="2.2"/><rect x="4" y="13" width="7" height="7" rx="1.5" stroke="#C9762C" stroke-width="2.2"/><rect x="13" y="13" width="7" height="7" rx="1.5" stroke="#C9762C" stroke-width="2.2"/></svg></span>
+          <div><b>Templates ready on day one.</b><span>A library of built-in KPI templates ships with the platform — so you start with the metrics that matter for medical device quality, and see the data you actually want from the first login.</span></div>
+        </div>
       </div>
 
       <div class="kpi-card rv">
@@ -678,7 +684,7 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
           <span class="kpi-trend"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18l7-7 4 4 5-7" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8h5v5" stroke="#2F8A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> trending up</span>
         </div>
         <div class="kpi-chart">
-          <svg viewBox="0 0 520 190" role="img" aria-label="On-time training completion trending upward over eight quarters">
+          <svg viewBox="0 0 560 222" role="img" aria-label="On-time training completion percentage, rising from 71 percent to 96.5 percent across the trailing eight quarters">
             <defs>
               <linearGradient id="kpiStroke" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0" stop-color="#DD8638"/><stop offset="1" stop-color="#2F8A63"/>
@@ -687,27 +693,46 @@ footer{padding:46px 0 54px;border-top:1px solid var(--hair)}
                 <stop offset="0" stop-color="#DD8638" stop-opacity=".22"/><stop offset="1" stop-color="#DD8638" stop-opacity="0"/>
               </linearGradient>
             </defs>
+            <!-- Y axis gridlines + % labels -->
             <g class="spark-grid">
-              <line x1="34" y1="34" x2="498" y2="34"/>
-              <line x1="34" y1="84" x2="498" y2="84"/>
-              <line x1="34" y1="134" x2="498" y2="134"/>
+              <line x1="58" y1="20" x2="536" y2="20"/>
+              <line x1="58" y1="62.3" x2="536" y2="62.3"/>
+              <line x1="58" y1="104.6" x2="536" y2="104.6"/>
+              <line x1="58" y1="146.9" x2="536" y2="146.9"/>
+              <line x1="58" y1="168" x2="536" y2="168"/>
             </g>
-            <path class="spark-area" d="M 34.0 168 L 34.0 153.9 L 100.3 130.5 L 166.6 139.9 L 232.9 102.4 L 299.1 88.3 L 365.4 74.2 L 431.7 55.5 L 498.0 34.4 L 498.0 168 Z"/>
-            <path class="spark-line" d="M 34.0 153.9 L 100.3 130.5 L 166.6 139.9 L 232.9 102.4 L 299.1 88.3 L 365.4 74.2 L 431.7 55.5 L 498.0 34.4"/>
-            <circle class="spark-dot" cx="34" cy="153.9" r="3.2"/>
-            <circle class="spark-dot" cx="100.3" cy="130.5" r="3.2"/>
-            <circle class="spark-dot" cx="166.6" cy="139.9" r="3.2"/>
-            <circle class="spark-dot" cx="232.9" cy="102.4" r="3.2"/>
-            <circle class="spark-dot" cx="299.1" cy="88.3" r="3.2"/>
-            <circle class="spark-dot" cx="365.4" cy="74.2" r="3.2"/>
-            <circle class="spark-dot" cx="431.7" cy="55.5" r="3.2"/>
-            <circle class="spark-dot end" cx="498" cy="34.4" r="5"/>
+            <g class="spark-y">
+              <text x="50" y="23" text-anchor="end">100%</text>
+              <text x="50" y="65.3" text-anchor="end">90%</text>
+              <text x="50" y="107.6" text-anchor="end">80%</text>
+              <text x="50" y="149.9" text-anchor="end">70%</text>
+            </g>
+            <!-- Y axis title -->
+            <text class="spark-axt" x="14" y="94" transform="rotate(-90 14 94)" text-anchor="middle">% on time</text>
+            <!-- area + line -->
+            <path class="spark-area" d="M 58.0 168 L 58.0 142.6 L 126.3 121.5 L 194.6 129.9 L 262.9 96.1 L 331.1 83.4 L 399.4 70.7 L 467.7 53.8 L 536.0 34.8 L 536.0 168 Z"/>
+            <path class="spark-line" d="M 58.0 142.6 L 126.3 121.5 L 194.6 129.9 L 262.9 96.1 L 331.1 83.4 L 399.4 70.7 L 467.7 53.8 L 536.0 34.8"/>
+            <circle class="spark-dot" cx="58" cy="142.6" r="3.2"/>
+            <circle class="spark-dot" cx="126.3" cy="121.5" r="3.2"/>
+            <circle class="spark-dot" cx="194.6" cy="129.9" r="3.2"/>
+            <circle class="spark-dot" cx="262.9" cy="96.1" r="3.2"/>
+            <circle class="spark-dot" cx="331.1" cy="83.4" r="3.2"/>
+            <circle class="spark-dot" cx="399.4" cy="70.7" r="3.2"/>
+            <circle class="spark-dot" cx="467.7" cy="53.8" r="3.2"/>
+            <circle class="spark-dot end" cx="536" cy="34.8" r="5"/>
+            <!-- X axis quarter labels (all 8) -->
             <g class="spark-x">
-              <text x="34" y="184">Q1</text>
-              <text x="166.6" y="184" text-anchor="middle">Q2</text>
-              <text x="299.1" y="184" text-anchor="middle">Q3</text>
-              <text x="498" y="184" text-anchor="end">now</text>
+              <text x="58" y="184" text-anchor="middle">Q3'24</text>
+              <text x="126.3" y="184" text-anchor="middle">Q4</text>
+              <text x="194.6" y="184" text-anchor="middle">Q1'25</text>
+              <text x="262.9" y="184" text-anchor="middle">Q2</text>
+              <text x="331.1" y="184" text-anchor="middle">Q3</text>
+              <text x="399.4" y="184" text-anchor="middle">Q4</text>
+              <text x="467.7" y="184" text-anchor="middle">Q1'26</text>
+              <text x="536" y="184" text-anchor="middle">Q2</text>
             </g>
+            <!-- X axis title -->
+            <text class="spark-axt" x="297" y="208" text-anchor="middle">Quarter · trailing 8</text>
           </svg>
         </div>
         <div class="kpi-foot">
